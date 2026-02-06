@@ -1,12 +1,9 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { POLICY_SECTIONS, APPS } from '../constants';
 
-interface PrivacyPolicyProps {
-  onBack: () => void;
-}
-
-const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
+const PrivacyPolicy: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#0f172a] text-slate-300 py-20 font-['Inter']">
       <style>{`
@@ -21,13 +18,13 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
         .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #64748b; }
       `}</style>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <button
-          onClick={onBack}
+        <Link
+          to="/"
           className="mb-8 flex items-center gap-2 text-primary hover:text-white transition-colors font-bold uppercase tracking-widest text-sm"
         >
           <span className="material-symbols-outlined">arrow_back</span>
           Back
-        </button>
+        </Link>
 
         <div className="lg:grid lg:grid-cols-12 lg:gap-12">
           {/* Sidebar Navigation - Hidden on mobile, sticky on desktop */}
@@ -116,7 +113,17 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
                         {section.subSections.map((sub, idx) => (
                           <div key={idx}>
                             <h3 className="text-lg font-bold text-white mb-1">{sub.title}</h3>
-                            <p className="text-slate-400 text-sm">{sub.content}</p>
+                            {sub.title === 'Email' ? (
+                              <a href={`mailto:${sub.content}`} className="text-primary hover:text-white transition-colors text-sm font-medium">
+                                {sub.content}
+                              </a>
+                            ) : sub.title === 'Website' ? (
+                              <a href={sub.content} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-white transition-colors text-sm font-medium">
+                                {sub.content}
+                              </a>
+                            ) : (
+                              <p className="text-slate-400 text-sm">{sub.content}</p>
+                            )}
                           </div>
                         ))}
                       </div>

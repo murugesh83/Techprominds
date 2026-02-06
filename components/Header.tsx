@@ -1,12 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-interface HeaderProps {
-  onNavigateHome: () => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ onNavigateHome }) => {
+const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,14 +14,18 @@ const Header: React.FC<HeaderProps> = ({ onNavigateHome }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavigateHome = () => {
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/80 backdrop-blur-md border-b border-slate-100 py-3 shadow-sm' 
+    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled
+        ? 'bg-white/80 backdrop-blur-md border-b border-slate-100 py-3 shadow-sm'
         : 'bg-white border-b border-transparent py-5'
-    }`}>
+      }`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-        <div className="flex items-center gap-2 cursor-pointer group" onClick={onNavigateHome}>
+        <div className="flex items-center gap-2 cursor-pointer group" onClick={handleNavigateHome}>
           <div className="bg-primary h-10 w-10 rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
             <span className="material-symbols-outlined text-white text-2xl font-bold">terminal</span>
           </div>
@@ -31,13 +33,13 @@ const Header: React.FC<HeaderProps> = ({ onNavigateHome }) => {
             Techpro <span className="text-primary">Mind</span>
           </span>
         </div>
-        
+
         <nav className="hidden md:flex items-center gap-8">
           {['Services', 'Why Us', 'Portfolio', 'About'].map((item) => (
-            <a 
+            <a
               key={item}
-              className="text-sm font-bold text-text-muted hover:text-primary transition-colors" 
-              href={`#${item.toLowerCase().replace(' ', '-')}`}
+              className="text-sm font-bold text-text-muted hover:text-primary transition-colors"
+              href={`/#${item.toLowerCase().replace(' ', '-')}`}
             >
               {item}
             </a>

@@ -172,7 +172,7 @@ export const POLICY_SECTIONS: PolicySection[] = [
       },
       {
         title: 'Website',
-        content: 'techpromind.com'
+        content: 'https://techprominds.netlify.app/'
       }
     ]
   },
