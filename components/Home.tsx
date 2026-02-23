@@ -20,7 +20,7 @@ const Home: React.FC = () => {
                                 <span className="text-primary">ENGINEER?</span>
                             </h2>
                             <p className="mt-10 text-xl text-slate-400 leading-relaxed font-bold max-w-2xl mx-auto">
-                                Join the ranks of high-performance companies powered by Techpro Mind infrastructure.
+                                Join high-performance companies powered by Techpro Mind.
                             </p>
                             <div className="mt-14 flex flex-wrap justify-center gap-6">
                                 <button className="h-20 px-12 bg-primary text-white rounded-2xl text-2xl font-black transition-all hover:bg-white hover:text-text-main shadow-2xl shadow-primary/30 active:scale-95">

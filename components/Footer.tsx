@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
               <span className="text-xl font-black tracking-tight text-text-main">Techpro <span className="text-primary">Mind</span></span>
             </div>
             <p className="text-sm font-bold text-text-muted leading-relaxed">
-              Global software authority in mission-critical mobile and enterprise systems. Engineering excellence since 2018.
+              Mission-critical mobile and enterprise systems. Engineering excellence since 2018.
             </p>
           </div>
 

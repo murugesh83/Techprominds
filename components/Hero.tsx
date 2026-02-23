@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
           </h1>
           
           <p className="max-w-2xl text-xl md:text-2xl text-text-muted leading-relaxed font-semibold">
-            We engineer mission-critical software architectures. Techpro Mind LLC delivers the technical backbone for modern industry leaders.
+            Mission-critical software architectures. The technical backbone for modern industry leaders.
           </p>
           
           <div className="flex flex-wrap justify-center gap-6 mt-4">
