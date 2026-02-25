@@ -53,7 +53,7 @@ import { AppInfo, PolicySection } from './types';
 
 export const APPS: AppInfo[] = [
   { name: 'Smart Weather', description: 'Weather forecasting application' },
-  { name: 'Smart Share', description: 'File Transfer application' },
+  { name: 'Wifi Smart Chat', description: 'File Transfer application' },
   { name: 'Smart Scanner', description: 'Camera document scanner and share' },
   { name: 'GPS Map Camera', description: 'Preserve and Relive Your Travel Adventures' },
   { name: 'Smart Fluid Particle', description: 'Create Stunning Artworks with Flowing Particles' },
