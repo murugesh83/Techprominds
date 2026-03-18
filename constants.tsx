@@ -68,7 +68,7 @@ export const POLICY_SECTIONS: PolicySection[] = [
   {
     id: 'introduction',
     title: 'Privacy Policy',
-    lastUpdated: 'November 29, 2024',
+    lastUpdated: 'March 18, 2026',
     content: 'Techpro Mind LLC values your privacy. This policy explains how we handle your personal data across our applications and services, including:',
     listType: 'checkmark',
   },
