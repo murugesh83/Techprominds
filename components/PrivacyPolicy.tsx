@@ -69,15 +69,24 @@ const PrivacyPolicy: React.FC = () => {
                     {/* Render apps list for introduction if needed */}
                     {section.id === 'introduction' && APPS.length > 0 && (
                       <div className="grid gap-3 mt-6 sm:grid-cols-2">
-                        {APPS.map((app) => (
-                          <div key={app.name} className="flex items-start gap-3 bg-slate-900/50 p-3 rounded-lg border border-slate-800">
-                            <span className="material-symbols-outlined text-primary mt-0.5 text-lg">check_circle</span>
-                            <div>
-                              <h4 className="font-bold text-white text-sm">{app.name}</h4>
-                              <p className="text-xs text-slate-400">{app.description}</p>
+                        {APPS.map((app) => {
+                          const isHealthier = app.name === 'Healthier - Food Scanner';
+                          const card = (
+                            <div key={app.name} className={`flex items-start gap-3 bg-slate-900/50 p-3 rounded-lg border transition-colors ${isHealthier ? 'border-primary/50 hover:border-primary cursor-pointer hover:bg-slate-800/80' : 'border-slate-800'}`}>
+                              <span className="material-symbols-outlined text-primary mt-0.5 text-lg">check_circle</span>
+                              <div className="flex-1">
+                                <h4 className="font-bold text-white text-sm">{app.name}</h4>
+                                <p className="text-xs text-slate-400">{app.description}</p>
+                              </div>
+                              {isHealthier && (
+                                <span className="material-symbols-outlined text-primary text-sm mt-0.5">open_in_new</span>
+                              )}
                             </div>
-                          </div>
-                        ))}
+                          );
+                          return isHealthier ? (
+                            <Link key={app.name} to="/privacypolicy/healthier">{card}</Link>
+                          ) : card;
+                        })}
                       </div>
                     )}
                   </div>
