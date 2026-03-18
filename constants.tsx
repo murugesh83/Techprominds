@@ -5,25 +5,25 @@ export const SERVICES: Service[] = [
   {
     id: 'mobile',
     title: 'Mobile App Development',
-    description: 'Native iOS & Android apps plus cross-platform solutions with Flutter and React Native.',
+    description: 'iOS, Android, and cross-platform apps with Flutter and React Native.',
     icon: 'smartphone',
     image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1974&auto=format&fit=crop',
     features: [
-      'Native iOS (Swift) & Android (Kotlin)',
-      'Cross-platform Development',
-      'UX/UI Mobile Product Design'
+      'iOS & Android Native',
+      'Cross-Platform',
+      'UX/UI Design'
     ]
   },
   {
     id: 'strategy',
     title: 'Software Strategy',
-    description: 'Digital transformation and architecture planning to modernize your infrastructure.',
+    description: 'Modernize your tech stack with expert architecture planning.',
     icon: 'insights',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
     features: [
-      'Legacy System Modernization',
-      'Cloud Infrastructure Planning',
-      'CTO-as-a-Service Advisory'
+      'Legacy Modernization',
+      'Cloud Planning',
+      'CTO Advisory'
     ]
   }
 ];
@@ -32,19 +32,19 @@ export const FEATURES: Feature[] = [
   {
     id: 'reliability',
     title: 'Unmatched Reliability',
-    description: '99% on-time delivery with consistent timelines and robust project management.',
+    description: '99% on-time delivery. Consistent timelines you can count on.',
     icon: 'verified_user'
   },
   {
     id: 'expertise',
     title: 'Technical Expertise',
-    description: 'Senior developers and architects with deep experience in mission-critical systems.',
+    description: 'Senior engineers who build systems that don\'t break.',
     icon: 'developer_mode_tv'
   },
   {
     id: 'growth',
     title: 'Strategic Growth',
-    description: 'Digital strategies aligned with your long-term business and financial goals.',
+    description: 'Technology decisions tied to real business outcomes.',
     icon: 'trending_up'
   }
 ];
@@ -61,6 +61,7 @@ export const APPS: AppInfo[] = [
   { name: 'NotifyVault', description: 'Smart Notification Manager and Backup' },
   { name: 'ScreenShotVault', description: 'Secure Screenshot Organizer and Storage' },
   { name: 'Girivalam Guide', description: 'Temple Pilgrimage Route Navigator' },
+  { name: 'Healthier - Food Scanner', description: 'Food Nutrition Scanner and Health Tracker' },
 ];
 
 export const POLICY_SECTIONS: PolicySection[] = [

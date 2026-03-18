@@ -8,8 +8,8 @@ const Services: React.FC = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-24">
           <div className="max-w-3xl">
-            <h2 className="text-primary font-black uppercase tracking-[0.4em] text-sm mb-4">Our Services</h2>
-            <h3 className="text-5xl md:text-6xl font-[900] tracking-tight text-text-main">Expert Engineering.</h3>
+            <h2 className="text-primary font-black uppercase tracking-[0.4em] text-sm mb-4">Services</h2>
+            <h3 className="text-5xl md:text-6xl font-[900] tracking-tight text-text-main">What We Build.</h3>
           </div>
           <button className="bg-white border border-slate-200 px-8 py-4 rounded-xl font-extrabold text-sm tracking-widest uppercase hover:bg-slate-100 transition-all flex items-center gap-4">
             VIEW ALL <span className="material-symbols-outlined">east</span>

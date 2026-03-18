@@ -7,8 +7,8 @@ const Features: React.FC = () => {
     <section className="py-32 bg-white" id="why-us">
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="mb-24 text-center">
-          <h2 className="text-primary font-black uppercase tracking-[0.4em] text-sm mb-4">Integrity</h2>
-          <h3 className="text-5xl md:text-6xl font-[900] tracking-tight text-text-main">Reliable. Scalable. Fast.</h3>
+          <h2 className="text-primary font-black uppercase tracking-[0.4em] text-sm mb-4">Why Us</h2>
+          <h3 className="text-5xl md:text-6xl font-[900] tracking-tight text-text-main">Results You Can Trust.</h3>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
