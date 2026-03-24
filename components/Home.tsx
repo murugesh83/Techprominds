@@ -31,17 +31,29 @@ const Home: React.FC = () => {
                         {APPS.map((app) => {
                             const isHealthier = !!app.privacyPolicyPath;
                             const card = (
-                                <div className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-slate-200 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 cursor-pointer transition-all group">
-                                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center flex-shrink-0 ${isHealthier ? 'bg-primary' : 'bg-slate-100 group-hover:bg-primary/10'}`}>
-                                        <span className={`material-symbols-outlined text-lg ${isHealthier ? 'text-white' : 'text-slate-500 group-hover:text-primary'}`}>
-                                            {isHealthier ? 'nutrition' : 'smartphone'}
-                                        </span>
+                                <div className="flex flex-col gap-4 p-6 rounded-2xl bg-white border border-slate-200 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 cursor-pointer transition-all group h-full">
+                                    <div className="flex items-start gap-4">
+                                        <div className={`h-10 w-10 rounded-xl flex items-center justify-center flex-shrink-0 ${isHealthier ? 'bg-primary' : 'bg-slate-100 group-hover:bg-primary/10'}`}>
+                                            <span className={`material-symbols-outlined text-lg ${isHealthier ? 'text-white' : 'text-slate-500 group-hover:text-primary'}`}>
+                                                {isHealthier ? 'nutrition' : 'smartphone'}
+                                            </span>
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                            <h4 className="font-extrabold text-text-main text-sm truncate">{app.name}</h4>
+                                            <p className="text-xs text-text-muted mt-1 leading-relaxed">{app.description}</p>
+                                        </div>
                                     </div>
-                                    <div className="flex-1 min-w-0">
-                                        <h4 className="font-extrabold text-text-main text-sm truncate">{app.name}</h4>
-                                        <p className="text-xs text-text-muted mt-1 leading-relaxed">{app.description}</p>
+                                    {/* Google Play badge */}
+                                    <div className="flex items-center gap-2 mt-auto pt-3 border-t border-slate-100">
+                                        <svg className="h-4 w-4 flex-shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.18 23.76c.33.18.7.22 1.06.14l11.29-11.29L12 9.08 3.18 23.76z" fill="#EA4335"/>
+                                            <path d="M20.65 10.6L17.4 8.76l-3.87 3.87 3.87 3.87 3.27-1.86a1.857 1.857 0 000-3.24l-.02.16z" fill="#FBBC04"/>
+                                            <path d="M3.18.24A1.84 1.84 0 002 1.96v20.08c0 .67.37 1.25.93 1.57l.25.15L15.47 12 3.18.24z" fill="#4285F4"/>
+                                            <path d="M4.24.1L15.47 12 12 8.53 4.24.1z" fill="#34A853"/>
+                                            <path d="M4.24.1l-.06-.04A1.84 1.84 0 002 1.96v.19L12 9.08l3.47-3.47L4.24.1z" fill="#34A853"/>
+                                        </svg>
+                                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest group-hover:text-primary transition-colors">Google Play</span>
                                     </div>
-                                    <span className="material-symbols-outlined text-slate-300 group-hover:text-primary text-sm flex-shrink-0 mt-0.5 transition-colors">open_in_new</span>
                                 </div>
                             );
                             return (
