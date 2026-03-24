@@ -13,7 +13,7 @@ const Home: React.FC = () => {
             <Services />
 
             {/* Our Apps Section */}
-            <section className="py-24 bg-slate-50" id="apps">
+            <section className="py-24 bg-slate-50" id="portfolio">
                 <div className="mx-auto max-w-7xl px-6">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
                         <div>
@@ -29,11 +29,11 @@ const Home: React.FC = () => {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {APPS.map((app) => {
-                            const isHealthier = app.name === 'Healthier - Food Scanner';
+                            const isHealthier = !!app.privacyPolicyPath;
                             const card = (
-                                <div className={`flex items-start gap-4 p-6 rounded-2xl bg-white border transition-all ${isHealthier ? 'border-primary/40 hover:border-primary hover:shadow-lg hover:shadow-primary/10 cursor-pointer' : 'border-slate-200 hover:border-slate-300'}`}>
-                                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center flex-shrink-0 ${isHealthier ? 'bg-primary' : 'bg-slate-100'}`}>
-                                        <span className={`material-symbols-outlined text-lg ${isHealthier ? 'text-white' : 'text-slate-500'}`}>
+                                <div className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-slate-200 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 cursor-pointer transition-all group">
+                                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center flex-shrink-0 ${isHealthier ? 'bg-primary' : 'bg-slate-100 group-hover:bg-primary/10'}`}>
+                                        <span className={`material-symbols-outlined text-lg ${isHealthier ? 'text-white' : 'text-slate-500 group-hover:text-primary'}`}>
                                             {isHealthier ? 'nutrition' : 'smartphone'}
                                         </span>
                                     </div>
@@ -41,15 +41,18 @@ const Home: React.FC = () => {
                                         <h4 className="font-extrabold text-text-main text-sm truncate">{app.name}</h4>
                                         <p className="text-xs text-text-muted mt-1 leading-relaxed">{app.description}</p>
                                     </div>
-                                    {isHealthier && (
-                                        <span className="material-symbols-outlined text-primary text-sm flex-shrink-0 mt-0.5">open_in_new</span>
-                                    )}
+                                    <span className="material-symbols-outlined text-slate-300 group-hover:text-primary text-sm flex-shrink-0 mt-0.5 transition-colors">open_in_new</span>
                                 </div>
                             );
-                            return isHealthier ? (
-                                <Link key={app.name} to="/privacypolicy/healthier">{card}</Link>
-                            ) : (
-                                <div key={app.name}>{card}</div>
+                            return (
+                                <a
+                                    key={app.name}
+                                    href={app.playStoreUrl || '#'}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {card}
+                                </a>
                             );
                         })}
                     </div>

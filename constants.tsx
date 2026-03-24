@@ -52,16 +52,57 @@ export const FEATURES: Feature[] = [
 import { AppInfo, PolicySection } from './types';
 
 export const APPS: AppInfo[] = [
-  { name: 'Smart Weather', description: 'Weather forecasting application' },
-  { name: 'Wifi Smart Chat', description: 'File Transfer application' },
-  { name: 'Smart Scanner', description: 'Camera document scanner and share' },
-  { name: 'GPS Map Camera', description: 'Preserve and Relive Your Travel Adventures' },
-  { name: 'Smart Fluid Particle', description: 'Create Stunning Artworks with Flowing Particles' },
-  { name: 'Photo ID Editor', description: 'Professional Photo ID Editing Tool' },
-  { name: 'NotifyVault', description: 'Smart Notification Manager and Backup' },
-  { name: 'ScreenShotVault', description: 'Secure Screenshot Organizer and Storage' },
-  { name: 'Girivalam Guide', description: 'Temple Pilgrimage Route Navigator' },
-  { name: 'Healthier - Food Scanner', description: 'Food Nutrition Scanner and Health Tracker' },
+  {
+    name: 'Smart Weather',
+    description: 'Weather forecasting application',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.smartweather',
+  },
+  {
+    name: 'Wifi Smart Chat',
+    description: 'File Transfer application',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.app',
+  },
+  {
+    name: 'Smart Scanner',
+    description: 'Camera document scanner and share',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.smartdocscanner',
+  },
+  {
+    name: 'GPS Map Camera',
+    description: 'Preserve and Relive Your Travel Adventures',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.gpscamera',
+  },
+  {
+    name: 'Smart Fluid Particle',
+    description: 'Create Stunning Artworks with Flowing Particles',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.smartfluid',
+  },
+  {
+    name: 'Photo ID Editor',
+    description: 'Professional Photo ID Editing Tool',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.passporteditor',
+  },
+  {
+    name: 'NotifyVault',
+    description: 'Smart Notification Manager and Backup',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.notifyvault',
+  },
+  {
+    name: 'ScreenShotVault',
+    description: 'Secure Screenshot Organizer and Storage',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.screenvault',
+  },
+  {
+    name: 'Girivalam Guide',
+    description: 'Temple Pilgrimage Route Navigator',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.tiruvannamalai',
+  },
+  {
+    name: 'Healthier - Food Scanner',
+    description: 'Food Nutrition Scanner and Health Tracker',
+    playStoreUrl: 'https://play.google.com/store/apps/dev?id=6457367301899142561',
+    privacyPolicyPath: '/privacypolicy/healthier',
+  },
 ];
 
 export const POLICY_SECTIONS: PolicySection[] = [

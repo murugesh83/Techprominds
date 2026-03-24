@@ -23,6 +23,8 @@ export interface Message {
 export interface AppInfo {
   name: string;
   description: string;
+  playStoreUrl?: string;
+  privacyPolicyPath?: string;
 }
 
 export interface SubSection {
