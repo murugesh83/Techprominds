@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Hero from './Hero';
 import Features from './Features';
 import Services from './Services';
+import { APPS } from '../constants';
 
 const Home: React.FC = () => {
     return (
@@ -9,6 +11,50 @@ const Home: React.FC = () => {
             <Hero />
             <Features />
             <Services />
+
+            {/* Our Apps Section */}
+            <section className="py-24 bg-slate-50" id="apps">
+                <div className="mx-auto max-w-7xl px-6">
+                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+                        <div>
+                            <h2 className="text-primary font-black uppercase tracking-[0.4em] text-sm mb-4">Portfolio</h2>
+                            <h3 className="text-5xl md:text-6xl font-[900] tracking-tight text-text-main">Our Apps.</h3>
+                        </div>
+                        <Link
+                            to="/privacypolicy"
+                            className="bg-white border border-slate-200 px-8 py-4 rounded-xl font-extrabold text-sm tracking-widest uppercase hover:bg-slate-100 transition-all flex items-center gap-4 text-text-main w-fit"
+                        >
+                            PRIVACY POLICY <span className="material-symbols-outlined">east</span>
+                        </Link>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {APPS.map((app) => {
+                            const isHealthier = app.name === 'Healthier - Food Scanner';
+                            const card = (
+                                <div className={`flex items-start gap-4 p-6 rounded-2xl bg-white border transition-all ${isHealthier ? 'border-primary/40 hover:border-primary hover:shadow-lg hover:shadow-primary/10 cursor-pointer' : 'border-slate-200 hover:border-slate-300'}`}>
+                                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center flex-shrink-0 ${isHealthier ? 'bg-primary' : 'bg-slate-100'}`}>
+                                        <span className={`material-symbols-outlined text-lg ${isHealthier ? 'text-white' : 'text-slate-500'}`}>
+                                            {isHealthier ? 'nutrition' : 'smartphone'}
+                                        </span>
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                        <h4 className="font-extrabold text-text-main text-sm truncate">{app.name}</h4>
+                                        <p className="text-xs text-text-muted mt-1 leading-relaxed">{app.description}</p>
+                                    </div>
+                                    {isHealthier && (
+                                        <span className="material-symbols-outlined text-primary text-sm flex-shrink-0 mt-0.5">open_in_new</span>
+                                    )}
+                                </div>
+                            );
+                            return isHealthier ? (
+                                <Link key={app.name} to="/privacypolicy/healthier">{card}</Link>
+                            ) : (
+                                <div key={app.name}>{card}</div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </section>
 
             {/* Call to Action Section */}
             <section className="py-20 bg-white">

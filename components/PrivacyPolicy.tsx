@@ -29,22 +29,48 @@ const PrivacyPolicy: React.FC = () => {
         <div className="lg:grid lg:grid-cols-12 lg:gap-12">
           {/* Sidebar Navigation - Hidden on mobile, sticky on desktop */}
           <aside className="hidden lg:block lg:col-span-3">
-            <nav className="sticky top-8 space-y-1">
-              <h3 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Contents</h3>
-              <div className="bg-slate-900/50 rounded-lg p-2 border border-slate-800 backdrop-blur-sm max-h-[80vh] overflow-y-auto custom-scrollbar">
-                {POLICY_SECTIONS.map((section) => (
-                  <a
-                    key={section.id}
-                    href={`#${section.id}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="block px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-md transition-colors truncate"
-                  >
-                    {section.title}
-                  </a>
-                ))}
+            <nav className="sticky top-8 space-y-4">
+              <div>
+                <h3 className="text-white font-bold mb-3 uppercase tracking-wider text-sm">Contents</h3>
+                <div className="bg-slate-900/50 rounded-lg p-2 border border-slate-800 backdrop-blur-sm max-h-[40vh] overflow-y-auto custom-scrollbar">
+                  {POLICY_SECTIONS.map((section) => (
+                    <a
+                      key={section.id}
+                      href={`#${section.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="block px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-md transition-colors truncate"
+                    >
+                      {section.title}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-white font-bold mb-3 uppercase tracking-wider text-sm">Our Apps</h3>
+                <div className="bg-slate-900/50 rounded-lg p-2 border border-slate-800 backdrop-blur-sm max-h-[40vh] overflow-y-auto custom-scrollbar">
+                  {APPS.map((app) => {
+                    const isHealthier = app.name === 'Healthier - Food Scanner';
+                    return isHealthier ? (
+                      <Link
+                        key={app.name}
+                        to="/privacypolicy/healthier"
+                        className="flex items-center justify-between gap-2 px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-md transition-colors group"
+                      >
+                        <span className="truncate">{app.name}</span>
+                        <span className="material-symbols-outlined text-primary text-sm flex-shrink-0">open_in_new</span>
+                      </Link>
+                    ) : (
+                      <div key={app.name} className="flex items-center gap-2 px-3 py-2 text-sm text-slate-400 rounded-md truncate">
+                        <span className="h-1.5 w-1.5 rounded-full bg-slate-600 flex-shrink-0"></span>
+                        <span className="truncate">{app.name}</span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </nav>
           </aside>
