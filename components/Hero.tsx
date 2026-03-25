@@ -3,7 +3,7 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-32 hero-gradient">
+    <section className="relative overflow-hidden pt-16 pb-10 md:pt-24 md:pb-16 hero-gradient">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-center text-center gap-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-5 py-2 text-xs font-extrabold uppercase tracking-widest text-primary">
@@ -25,12 +25,12 @@ const Hero: React.FC = () => {
               GET STARTED
               <span className="material-symbols-outlined font-black">arrow_forward</span>
             </button>
-            <button className="h-16 px-12 bg-white border border-slate-200 hover:bg-slate-50 text-text-main rounded-xl text-xl font-extrabold transition-all">
+            <button className="h-16 px-12 bg-white border-2 border-primary/30 hover:border-primary hover:bg-primary/5 text-text-main rounded-xl text-xl font-extrabold transition-all">
               OUR WORK
             </button>
           </div>
 
-          <div className="mt-16 flex flex-wrap justify-center gap-12 text-slate-400">
+          <div className="mt-10 flex flex-wrap justify-center gap-12 text-slate-400">
             {[
               { icon: 'hub', label: 'Cloud Native' },
               { icon: 'phone_iphone', label: 'Mobile First' },

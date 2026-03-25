@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               <li><a className="hover:text-primary transition-colors" href="/#about">About</a></li>
               <li><a className="hover:text-primary transition-colors" href="/#portfolio">Portfolio</a></li>
               <li><Link to="/privacypolicy" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-left uppercase text-[10px] tracking-widest">Privacy Policy</Link></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Careers</a></li>
+              <li><a className="hover:text-primary transition-colors" href="mailto:lead@techpromind.com">Contact Us</a></li>
             </ul>
           </div>
 
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
 
         <div className="mt-24 pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-300">
-            © 2024 Techpro Mind LLC. All protocols observed.
+            © 2026 Techpro Mind LLC. All rights reserved.
           </p>
           <div className="flex gap-8">
             <a href="#" className="text-slate-300 hover:text-text-main transition-colors">
