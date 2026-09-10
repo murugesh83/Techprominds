@@ -81,7 +81,7 @@ const sections = [
     items: [
       'Delete your food logs and history at any time from within the app',
       'Revoke camera permission at any time via your device settings',
-      'Request data deletion by contacting us at lead@techpromind.com',
+      'Request data deletion by contacting us at support@techpromindus.com',
     ],
     listType: 'bullet' as const,
   },
@@ -95,7 +95,7 @@ const sections = [
     title: 'Contact Us',
     content: 'For privacy questions or data requests related to Healthier – Food Scanner, contact us at:',
     items: [
-      'Email: lead@techpromind.com',
+      'Email: support@techpromindus.com',
       'Website: https://techprominds.netlify.app/',
     ],
     listType: 'bullet' as const,

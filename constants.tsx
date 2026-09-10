@@ -213,7 +213,7 @@ export const POLICY_SECTIONS: PolicySection[] = [
     subSections: [
       {
         title: 'Email',
-        content: 'lead@techpromind.com'
+        content: 'support@techpromindus.com'
       },
       {
         title: 'Website',

@@ -40,7 +40,7 @@ const AIConsultant: React.FC = () => {
       const aiText = response.text || 'Thinking...';
       setMessages(prev => [...prev, { role: 'assistant', content: aiText }]);
     } catch (error) {
-      setMessages(prev => [...prev, { role: 'assistant', content: 'Our technical lines are busy. Email contact@techpromind.com.' }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: 'Our technical lines are busy. Email support@techpromindus.com.' }]);
     } finally {
       setIsLoading(false);
     }
