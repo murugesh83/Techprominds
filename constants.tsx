@@ -61,6 +61,7 @@ export const APPS: AppInfo[] = [
   { name: 'NotifyVault', description: 'Smart Notification Manager and Backup' },
   { name: 'ScreenShotVault', description: 'Secure Screenshot Organizer and Storage' },
   { name: 'Girivalam Guide', description: 'Temple Pilgrimage Route Navigator' },
+  { name: 'Tamil Kural Box', description: 'Thirukkural Wisdom and Learning App' },
 ];
 
 export const POLICY_SECTIONS: PolicySection[] = [
