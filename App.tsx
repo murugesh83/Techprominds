@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import HealthierPrivacyPolicy from './components/HealthierPrivacyPolicy';
+import KuralBoxPrivacyPolicy from './components/KuralBoxPrivacyPolicy';
 import AIConsultant from './components/AIConsultant';
 
 const AppContent: React.FC = () => {
@@ -26,6 +27,7 @@ const AppContent: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/privacypolicy/healthier" element={<HealthierPrivacyPolicy />} />
+          <Route path="/privacypolicy/kuralbox" element={<KuralBoxPrivacyPolicy />} />
         </Routes>
       </main>
 

@@ -53,11 +53,10 @@ const PrivacyPolicy: React.FC = () => {
                 <h3 className="text-white font-bold mb-3 uppercase tracking-wider text-sm">Our Apps</h3>
                 <div className="bg-slate-900/50 rounded-lg p-2 border border-slate-800 backdrop-blur-sm max-h-[40vh] overflow-y-auto custom-scrollbar">
                   {APPS.map((app) => {
-                    const isHealthier = app.name === 'Healthier - Food Scanner';
-                    return isHealthier ? (
+                    return app.privacyPolicyPath ? (
                       <Link
                         key={app.name}
-                        to="/privacypolicy/healthier"
+                        to={app.privacyPolicyPath}
                         className="flex items-center justify-between gap-2 px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-md transition-colors group"
                       >
                         <span className="truncate">{app.name}</span>
@@ -96,21 +95,21 @@ const PrivacyPolicy: React.FC = () => {
                     {section.id === 'introduction' && APPS.length > 0 && (
                       <div className="grid gap-3 mt-6 sm:grid-cols-2">
                         {APPS.map((app) => {
-                          const isHealthier = app.name === 'Healthier - Food Scanner';
+                          const hasPolicy = Boolean(app.privacyPolicyPath);
                           const card = (
-                            <div key={app.name} className={`flex items-start gap-3 bg-slate-900/50 p-3 rounded-lg border transition-colors ${isHealthier ? 'border-primary/50 hover:border-primary cursor-pointer hover:bg-slate-800/80' : 'border-slate-800'}`}>
+                            <div key={app.name} className={`flex items-start gap-3 bg-slate-900/50 p-3 rounded-lg border transition-colors ${hasPolicy ? 'border-primary/50 hover:border-primary cursor-pointer hover:bg-slate-800/80' : 'border-slate-800'}`}>
                               <span className="material-symbols-outlined text-primary mt-0.5 text-lg">check_circle</span>
                               <div className="flex-1">
                                 <h4 className="font-bold text-white text-sm">{app.name}</h4>
                                 <p className="text-xs text-slate-400">{app.description}</p>
                               </div>
-                              {isHealthier && (
+                              {hasPolicy && (
                                 <span className="material-symbols-outlined text-primary text-sm mt-0.5">open_in_new</span>
                               )}
                             </div>
                           );
-                          return isHealthier ? (
-                            <Link key={app.name} to="/privacypolicy/healthier">{card}</Link>
+                          return hasPolicy ? (
+                            <Link key={app.name} to={app.privacyPolicyPath!}>{card}</Link>
                           ) : card;
                         })}
                       </div>

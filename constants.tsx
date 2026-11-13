@@ -68,6 +68,11 @@ export const APPS: AppInfo[] = [
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.tiruvannamalai',
   },
   {
+    name: 'Kural Box',
+    description: 'Offline Thirukkural Reader',
+    privacyPolicyPath: '/privacypolicy/kuralbox',
+  },
+  {
     name: 'Wifi Smart Chat',
     description: 'File Transfer application',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.app',
