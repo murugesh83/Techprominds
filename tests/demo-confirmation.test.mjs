@@ -11,6 +11,10 @@ test('addresses the customer, with fixed content and support reply address', () 
   assert.equal(message.to.address, 'customer@example.com');
   assert.equal(message.from.address, 'support@techpromindus.com');
   assert.equal(message.replyTo, 'support@techpromindus.com');
+  assert.equal(message.from.name, 'Techpro Minds');
+  assert.equal(message.subject, 'We received your demo request — Techpro Minds');
+  assert.doesNotMatch(message.text, /Techpro Mind\b/);
+  assert.doesNotMatch(message.html, /Techpro Mind\b/);
   assert.match(message.text, /demo is not scheduled yet/);
   assert.doesNotMatch(message.text, /<script>|untrusted/);
   assert.doesNotMatch(message.html, /<script>|untrusted/);

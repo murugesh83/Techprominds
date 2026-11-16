@@ -10,12 +10,12 @@ export function confirmationMessage(payload) {
   const email = payload.data?.email;
   if (typeof email !== 'string' || email.length > 254 ||
       !/^[A-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9](?:[A-Z0-9-]*[A-Z0-9])?(?:\.[A-Z0-9](?:[A-Z0-9-]*[A-Z0-9])?)+$/i.test(email)) return null;
-  const text = `Thank you for requesting a demo with Techpro Mind!\n\nWe've received your request. Our team will review your needs and contact you to arrange a personal walkthrough of our restaurant website and direct ordering services.\n\nYour demo is not scheduled yet. We'll agree on a convenient time with you.\n\nHave a question or want to add anything? Reply to this email or contact ${SUPPORT}.\n\nTechpro Mind LLC\nPhiladelphia, PA\nhttps://techpromindus.com/\n\nIf you didn't submit this request, you can ignore this email.`;
+  const text = `Thank you for requesting a demo with Techpro Minds!\n\nWe've received your request. Our team will review your needs and contact you to arrange a personal walkthrough of our restaurant website and direct ordering services.\n\nYour demo is not scheduled yet. We'll agree on a convenient time with you.\n\nHave a question or want to add anything? Reply to this email or contact ${SUPPORT}.\n\nTechpro Minds LLC\nPhiladelphia, PA\nhttps://techpromindus.com/\n\nIf you didn't submit this request, you can ignore this email.`;
   return {
-    from: { name: 'Techpro Mind', address: SUPPORT },
+    from: { name: 'Techpro Minds', address: SUPPORT },
     to: { address: email },
     replyTo: SUPPORT,
-    subject: 'We received your demo request — Techpro Mind',
+    subject: 'We received your demo request — Techpro Minds',
     text,
     html: confirmationHtml,
     attachments: [{ filename: 'techprominds-logo.png', content: logoBase64, encoding: 'base64', contentType: 'image/png', cid: 'techprominds-logo@techpromindus.com', contentDisposition: 'inline' }],
