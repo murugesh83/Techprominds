@@ -13,6 +13,11 @@ test('addresses the customer, with fixed content and support reply address', () 
   assert.equal(message.replyTo, 'support@techpromindus.com');
   assert.match(message.text, /demo is not scheduled yet/);
   assert.doesNotMatch(message.text, /<script>|untrusted/);
+  assert.doesNotMatch(message.html, /<script>|untrusted/);
+  assert.match(message.html, /https:\/\/techpromindus.com\//);
+  assert.match(message.html, /cid:techprominds-logo@techpromindus.com/);
+  assert.equal(message.attachments[0].cid, 'techprominds-logo@techpromindus.com');
+  assert.equal(Buffer.from(message.attachments[0].content, 'base64').subarray(1, 4).toString(), 'PNG');
   assert.equal(message.messageId, confirmationMessage(submission).messageId);
 });
 

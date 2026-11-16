@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import { confirmationHtml, logoBase64 } from './demo-email-design.mjs';
 import { createHash } from 'node:crypto';
 
 const SUPPORT = 'support@techpromindus.com';
@@ -16,6 +17,8 @@ export function confirmationMessage(payload) {
     replyTo: SUPPORT,
     subject: 'We received your demo request — Techpro Mind',
     text,
+    html: confirmationHtml,
+    attachments: [{ filename: 'techprominds-logo.png', content: logoBase64, encoding: 'base64', contentType: 'image/png', cid: 'techprominds-logo@techpromindus.com', contentDisposition: 'inline' }],
     headers: { 'Auto-Submitted': 'auto-generated', 'X-Auto-Response-Suppress': 'All' },
     ...(payload.id ? { messageId: `<demo-${createHash('sha256').update(String(payload.id)).digest('hex')}@techpromindus.com>` } : {}),
   };
