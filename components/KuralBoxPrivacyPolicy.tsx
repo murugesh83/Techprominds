@@ -81,7 +81,7 @@ const sections = [
     content: 'For any questions about this privacy policy or the Kural Box app, contact us at:',
     items: [
       'Email: support@techpromindus.com',
-      'Website: https://techprominds.netlify.app/',
+      'Website: https://techpromindus.com/',
     ],
     listType: 'bullet' as const,
   },

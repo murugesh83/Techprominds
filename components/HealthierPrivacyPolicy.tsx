@@ -96,7 +96,7 @@ const sections = [
     content: 'For privacy questions or data requests related to Healthier – Food Scanner, contact us at:',
     items: [
       'Email: support@techpromindus.com',
-      'Website: https://techprominds.netlify.app/',
+      'Website: https://techpromindus.com/',
     ],
     listType: 'bullet' as const,
   },
