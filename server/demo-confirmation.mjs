@@ -40,9 +40,11 @@ export async function sendConfirmation(payload, env = process.env, makeTransport
     const result = await transport.sendMail(message);
     if (!result.accepted?.length || result.rejected?.length) throw new Error('Recipient was not accepted');
     return { sent: true };
-  } catch {
+  } catch (error) {
+    const safeCode = ['EAUTH', 'EENVELOPE', 'ECONNECTION', 'ETIMEDOUT', 'ESOCKET', 'EMESSAGE'].includes(error?.code) ? error.code : 'UNKNOWN';
+    const status = Number.isInteger(error?.responseCode) ? error.responseCode : 0;
     // Do not log customer data, SMTP credentials, or provider error details.
-    throw new Error('Demo confirmation delivery failed. Check Zoho credentials and sender alias.');
+    throw new Error(`Demo confirmation delivery failed (${safeCode}, SMTP ${status}). Check Zoho credentials and sender alias.`);
   } finally {
     transport.close();
   }
