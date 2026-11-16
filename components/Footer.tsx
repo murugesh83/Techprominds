@@ -15,24 +15,24 @@ const Footer: React.FC = () => {
               <span className="text-xl font-black tracking-tight text-text-main">Techpro <span className="text-primary">Mind</span></span>
             </div>
             <p className="text-sm font-bold text-text-muted leading-relaxed">
-              Mission-critical mobile and enterprise systems. Engineering excellence since 2018.
+              Restaurant websites, direct ordering and ongoing care. Built and managed by Techpro Mind LLC.
             </p>
           </div>
 
           <div>
             <h5 className="font-black text-xs uppercase tracking-widest text-text-main mb-8">Solutions</h5>
             <ul className="space-y-4 text-sm font-bold text-text-muted">
-              <li><a className="hover:text-primary transition-colors" href="/#services">Mobile Engineering</a></li>
-              <li><a className="hover:text-primary transition-colors" href="/#services">System Architecture</a></li>
-              <li><a className="hover:text-primary transition-colors" href="/#services">Cloud Ops</a></li>
-              <li><a className="hover:text-primary transition-colors" href="/#services">Security Audits</a></li>
+              <li><a className="hover:text-primary transition-colors" href="/#services">Restaurant Websites</a></li>
+              <li><a className="hover:text-primary transition-colors" href="/#services">Digital Menus</a></li>
+              <li><a className="hover:text-primary transition-colors" href="/#services">Online Ordering</a></li>
+              <li><a className="hover:text-primary transition-colors" href="/#services">Website Maintenance</a></li>
             </ul>
           </div>
 
           <div>
             <h5 className="font-black text-xs uppercase tracking-widest text-text-main mb-8">Company</h5>
             <ul className="space-y-4 text-sm font-bold text-text-muted">
-              <li><a className="hover:text-primary transition-colors" href="/#about">About</a></li>
+              <li><a className="hover:text-primary transition-colors" href="/#why-us">About</a></li>
               <li><a className="hover:text-primary transition-colors" href="/#portfolio">Portfolio</a></li>
               <li><Link to="/privacypolicy" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-left uppercase text-[10px] tracking-widest">Privacy Policy</Link></li>
               <li><a className="hover:text-primary transition-colors" href="mailto:support@techpromindus.com">Contact Us</a></li>

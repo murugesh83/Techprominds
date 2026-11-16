@@ -1,52 +1,16 @@
-
 import React from 'react';
-import { FEATURES } from '../constants';
+import { DEMO_EMAIL } from './Hero';
 
-const FEATURE_STATS: Record<string, { stat: string; label: string }> = {
-  reliability: { stat: '99%', label: 'On-Time Delivery' },
-  expertise:   { stat: '7+',  label: 'Years Experience' },
-  growth:      { stat: '50+', label: 'Apps Shipped' },
-};
-
-const Features: React.FC = () => {
-  return (
-    <section className="py-24 bg-white" id="why-us">
-      <div className="mx-auto max-w-7xl px-6 relative z-10">
-        <div className="mb-16 text-center">
-          <h2 className="text-primary font-black uppercase tracking-[0.4em] text-sm mb-4">Why Us</h2>
-          <h3 className="text-5xl md:text-6xl font-[900] tracking-tight text-text-main">Results You Can Trust.</h3>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {FEATURES.map((feature) => {
-            const meta = FEATURE_STATS[feature.id];
-            return (
-              <div
-                key={feature.id}
-                className="group p-10 rounded-3xl border border-slate-100 bg-slate-50/50 premium-shadow-hover transition-all"
-              >
-                {/* Stat callout */}
-                {meta && (
-                  <div className="mb-6">
-                    <span className="text-4xl font-[900] text-primary tracking-tight">{meta.stat}</span>
-                    <span className="ml-2 text-xs font-black uppercase tracking-widest text-text-muted">{meta.label}</span>
-                  </div>
-                )}
-
-                <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-white shadow-lg shadow-primary/30">
-                  <span className="material-symbols-outlined text-2xl font-bold">{feature.icon}</span>
-                </div>
-                <h4 className="text-xl font-extrabold mb-3 text-text-main tracking-tight">{feature.title}</h4>
-                <p className="text-text-muted leading-relaxed font-medium">
-                  {feature.description}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-};
-
+const Features: React.FC = () => (
+  <>
+    <section className="restaurant-work restaurant-section" id="restaurant-work"><div className="restaurant-wrap work-layout"><div className="work-art"><p>FROM OUR WORK</p><span className="material-symbols-outlined" aria-hidden="true">restaurant</span><h3>Biryani<br /><em>Bowl.</em></h3><span className="work-domain">biryanibowlpa.com ↗</span></div><div><p className="eyebrow">A REAL RESTAURANT. A REAL WEBSITE.</p><h2>See what this<br />could look like<br /><em>for your restaurant.</em></h2><p>Explore Biryani Bowl, an example of our restaurant website work. Then let’s talk about your menu, your customers and the way your kitchen runs.</p><a className="restaurant-button" href="https://www.biryanibowlpa.com/" target="_blank" rel="noopener noreferrer">Visit Biryani Bowl <span aria-hidden="true">↗</span></a><p className="small-note">Every setup is tailored. Ordering and printer compatibility are checked before launch.</p></div></div></section>
+    <section className="restaurant-section" id="why-us"><div className="restaurant-wrap"><div className="section-heading"><p className="eyebrow">A PARTNER, FROM DAY ONE</p><h2>You run the restaurant.<br /><em>We take care of the website.</em></h2></div><div className="process-grid">{[
+      ['01', 'Let’s get to know your restaurant.', 'We review your menu, branding, pickup workflow and current systems, then agree on the right scope.'],
+      ['02', 'We build. You give it a taste.', 'We prepare your website and menu, walk through the ordering experience together, and test the agreed integrations.'],
+      ['03', 'Launch with someone in your corner.', 'We show your team how it works and keep your website cared for through an agreed monthly maintenance plan.'],
+    ].map(([n,t,d])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div></div></section>
+    <section className="roadmap-section restaurant-section" id="roadmap"><div className="restaurant-wrap"><div className="section-heading"><p className="eyebrow">START FOCUSED. GROW THOUGHTFULLY.</p><h2>A foundation for<br /><em>what comes next.</em></h2><p>Our first offer is your website, menu, direct ordering and ongoing care. These additional services are a roadmap, not part of the current launch offer.</p></div><div className="roadmap-grid"><article><span className="roadmap-status">NEXT TO EXPLORE</span><h3>Get discovered. Welcome bigger orders.</h3><p><strong>Google presence</strong> — business-profile updates, consistent contact details and review QR codes.</p><p><strong>Catering</strong> — inquiry forms, party-tray menus and scheduled orders.</p></article><article><span className="roadmap-status">PLANNED FOR LATER</span><h3>Bring your customers back.</h3><p><strong>Repeat-customer tools</strong> — coupons, loyalty and permission-based email campaigns.</p><p><strong>Branded restaurant apps</strong> — a dedicated customer experience for ordering and repeat visits.</p></article></div><p className="roadmap-footnote">Also exploring: Point of Sale and a Restaurant AI Assistant. Availability and timing for future services are not yet committed.</p></div></section>
+    <section className="restaurant-contact restaurant-section" id="contact"><div className="restaurant-wrap"><p className="eyebrow">LET’S BUILD YOUR NEXT CHAPTER</p><h2>Great food deserves<br /><em>a great online home.</em></h2><p>Tell us about your restaurant. We’ll help you find the right place to start.</p><a className="restaurant-button" href={DEMO_EMAIL}>Talk to Techpro Mind <span aria-hidden="true">↗</span></a><a className="contact-email" href="mailto:support@techpromindus.com">support@techpromindus.com</a><span className="contact-location">Philadelphia, PA · Working with independent restaurants</span></div></section>
+  </>
+);
 export default Features;

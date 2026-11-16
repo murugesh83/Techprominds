@@ -1,33 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Hero from './Hero';
 import Features from './Features';
 import Services from './Services';
+import ProductCatalog from './ProductCatalog';
+import Pricing from './Pricing';
 import { APPS } from '../constants';
-
-// One unique color per app slot — all full Tailwind class names so they aren't purged
-const APP_COLORS = [
-  'bg-blue-600',
-  'bg-emerald-600',
-  'bg-orange-500',
-  'bg-purple-600',
-  'bg-green-600',
-  'bg-indigo-500',
-  'bg-sky-500',
-  'bg-violet-600',
-  'bg-rose-500',
-  'bg-teal-600',
-];
+import './restaurant.css';
 
 const getInitials = (name: string) =>
   name.split(/[\s\-–]+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
 
 const Home: React.FC = () => {
   return (
-    <>
+    <div className="restaurant-home">
       <Hero />
-      <Features />
+      <div className="restaurant-intro-bar">YOUR BRAND <span>✳</span> YOUR MENU <span>✳</span> YOUR DIRECT ORDERING <span>✳</span> OUR ONGOING SUPPORT</div>
       <Services />
+      <ProductCatalog />
+      <Pricing />
+      <Features />
 
       {/* Portfolio / Our Apps */}
       <section className="py-20 bg-slate-50" id="portfolio">
@@ -49,7 +40,7 @@ const Home: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {APPS.map((app, idx) => (
+            {APPS.map((app) => (
               <a
                 key={app.name}
                 href={app.playStoreUrl || '#'}
@@ -59,14 +50,14 @@ const Home: React.FC = () => {
               >
                 <div className="flex items-start gap-4">
                   {/* Colored initial avatar */}
-                  <div className={`h-12 w-12 rounded-xl flex items-center justify-center flex-shrink-0 ${APP_COLORS[idx % APP_COLORS.length]} shadow-md`}>
+                  <div className={`h-12 w-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-primary shadow-md`}>
                     <span className="text-white font-black text-sm tracking-tight">
                       {getInitials(app.name)}
                     </span>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-extrabold text-text-main text-sm leading-tight">{app.name}</h4>
-                    <p className="text-xs text-text-muted mt-1 leading-relaxed">{app.description}</p>
+                    <h4 className="font-extrabold text-text-main text-base leading-tight">{app.name}</h4>
+                    <p className="text-sm text-text-muted mt-1 leading-relaxed">{app.description}</p>
                   </div>
                 </div>
 
@@ -87,34 +78,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-text-main px-8 py-16 md:px-20 md:py-24 text-center text-white shadow-3xl shadow-black/10">
-            <div className="relative z-10 mx-auto max-w-4xl">
-              <h2 className="text-4xl font-[900] tracking-tighter md:text-5xl lg:text-6xl leading-[0.95]">
-                LET'S <br />
-                <span className="text-primary">BUILD.</span>
-              </h2>
-              <p className="mt-8 text-xl text-slate-400 leading-relaxed font-bold max-w-2xl mx-auto">
-                Partner with a team that ships on time, every time.
-              </p>
-              <div className="mt-12 flex flex-wrap justify-center gap-6">
-                <button className="h-20 px-12 bg-primary text-white rounded-2xl text-2xl font-black transition-all hover:bg-white hover:text-text-main shadow-2xl shadow-primary/30 active:scale-95">
-                  START NOW
-                </button>
-                <button className="h-20 px-12 bg-transparent border-2 border-white/50 hover:border-white hover:bg-white/10 text-white rounded-2xl text-2xl font-black transition-all">
-                  VIEW WORK
-                </button>
-              </div>
-              <p className="mt-8 text-sm text-slate-500 font-medium">
-                Free 30-minute discovery call · No commitment required
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+    </div>
   );
 };
 

@@ -1,51 +1,30 @@
-
 import React from 'react';
 
-const Hero: React.FC = () => {
-  return (
-    <section className="relative overflow-hidden pt-16 pb-10 md:pt-24 md:pb-16 hero-gradient">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="flex flex-col items-center text-center gap-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-5 py-2 text-xs font-extrabold uppercase tracking-widest text-primary">
-            <span className="h-2 w-2 rounded-full bg-primary animate-pulse"></span>
-            Engineering Excellence
-          </div>
+export const DEMO_EMAIL = 'mailto:support@techpromindus.com?subject=Restaurant%20website%20demo';
 
-          <h1 className="text-5xl font-[900] leading-[0.95] tracking-tighter text-text-main md:text-7xl lg:text-8xl">
-            BUILT FOR <br />
-            <span className="text-primary">SCALE.</span>
-          </h1>
-
-          <p className="max-w-2xl text-xl md:text-2xl text-text-muted leading-relaxed font-semibold">
-            Software that powers modern businesses. Reliable, secure, and built to last.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-6 mt-4">
-            <button className="h-16 px-12 bg-primary text-white rounded-xl text-xl font-extrabold transition-all hover:bg-primary-dark active:scale-95 shadow-xl shadow-primary/25 flex items-center gap-3">
-              GET STARTED
-              <span className="material-symbols-outlined font-black">arrow_forward</span>
-            </button>
-            <button className="h-16 px-12 bg-white border-2 border-primary/30 hover:border-primary hover:bg-primary/5 text-text-main rounded-xl text-xl font-extrabold transition-all">
-              OUR WORK
-            </button>
-          </div>
-
-          <div className="mt-10 flex flex-wrap justify-center gap-12 text-slate-400">
-            {[
-              { icon: 'hub', label: 'Cloud Native' },
-              { icon: 'phone_iphone', label: 'Mobile First' },
-              { icon: 'lock', label: 'Secure by Design' }
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em]">
-                <span className="material-symbols-outlined text-primary text-2xl">{item.icon}</span>
-                {item.label}
-              </div>
-            ))}
-          </div>
-        </div>
+const Hero: React.FC = () => (
+  <section className="restaurant-hero">
+    <div className="restaurant-wrap hero-layout">
+      <div>
+        <p className="eyebrow"><span /> BUILT FOR INDEPENDENT RESTAURANTS</p>
+        <h1>Your food.<br />Your brand.<br /><em>Your online orders.</em></h1>
+        <p className="hero-description">We build and manage your restaurant’s website and direct ordering.</p>
+        <p className="hero-detail">A beautiful website, a menu that’s easy to browse, and a simpler path from hungry customer to kitchen. With a real team to keep it all running.</p>
+        <div className="restaurant-actions"><a className="restaurant-button" href={DEMO_EMAIL}>Let’s talk about your restaurant <span aria-hidden="true">↗</span></a><a className="text-link" href="#restaurant-work">See our work <span aria-hidden="true">↗</span></a></div>
+        <p className="hero-note">Personal setup. Ongoing care. Your own brand.</p>
       </div>
-    </section>
-  );
-};
-
+      <div className="product-scene" aria-label="Illustrative restaurant website and order management preview">
+        <div className="scene-orbit" />
+        <div className="restaurant-browser">
+          <div className="browser-top"><span>● ● ●</span><span>YOUR RESTAURANT, ONLINE</span><span>↗</span></div>
+          <div className="sample-nav"><strong>THE LOCAL TABLE<span>FRESH FOOD. GOOD COMPANY.</span></strong><span>Menu &nbsp; Our story</span></div>
+          <div className="sample-cover"><span className="sample-label">MADE FRESH. MADE FOR YOU.</span><h2>Your next<br />favorite meal.</h2><span className="sample-order">Explore the menu ↗</span><div className="food-art" aria-hidden="true"><div className="plate"><i /><i /><i /><i /><i /><i /><b /></div></div></div>
+          <div className="sample-menu"><span>Good food. Just a few taps away.</span><div><span>Browse the menu</span><span>Choose pickup</span><span>Enjoy your meal</span></div></div>
+        </div>
+        <div className="order-ticket"><span className="ticket-icon material-symbols-outlined" aria-hidden="true">check_circle</span><div><strong>A new order. Ready for your kitchen.</strong><p>Paid online · Pickup · Order tracking</p></div></div>
+        <div className="scene-caption">WEBSITE + DIRECT ORDERING <span>Illustrative preview</span></div>
+      </div>
+    </div>
+  </section>
+);
 export default Hero;
