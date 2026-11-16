@@ -22,7 +22,7 @@ export default function Header() {
     {open && <div className="nav-backdrop" aria-hidden="true" />}
     <header className="site-header" ref={header}>
       <div className="header-inner">
-        <Link to="/" onClick={close} className="site-brand"><span className="brand-symbol" aria-hidden="true">✳</span>Techpro Mind<span className="brand-llc">LLC</span></Link>
+        <Link to="/" onClick={close} className="site-brand"><img className="brand-logo" src="/images/logo/techprominds-logo.svg" alt="Techpro Minds" width="500" height="105" /></Link>
         <button className="mobile-toggle" aria-label="Toggle navigation" aria-expanded={mobile} aria-controls="main-navigation" onClick={() => {setMobile(!mobile); setOpen(null);}}><span className="material-symbols-outlined" aria-hidden="true">{mobile ? 'close' : 'menu'}</span></button>
         <nav id="main-navigation" className={`main-navigation ${mobile ? 'is-visible' : ''}`} aria-label="Main navigation">
           <button ref={productTrigger} className={open === 'product' ? 'nav-selected' : ''} aria-expanded={open === 'product'} aria-controls="product-menu" onClick={() => setOpen(open === 'product' ? null : 'product')}>Product <span aria-hidden="true">{open === 'product' ? '⌃' : '⌄'}</span></button>

@@ -8,12 +8,7 @@ const Footer: React.FC = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-8 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              <div className="bg-text-main h-8 w-8 rounded flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-lg">terminal</span>
-              </div>
-              <span className="text-xl font-black tracking-tight text-text-main">Techpro <span className="text-primary">Mind</span></span>
-            </div>
+            <Link to="/" className="footer-brand"><img src="/images/logo/techprominds-logo.svg" alt="Techpro Minds" width="500" height="105" /></Link>
             <p className="text-sm font-bold text-text-muted leading-relaxed">
               Restaurant websites, direct ordering and ongoing care. Built and managed by Techpro Mind LLC.
             </p>
