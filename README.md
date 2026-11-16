@@ -43,3 +43,30 @@ placement, and a retried event can cause a duplicate email.
 Run `node --test tests/demo-confirmation.test.mjs`, `npx tsc --noEmit`, and
 `npm run build`. Complete a live form test and check the customer mailbox after
 configuring credentials. Do not claim email delivery from the form success screen.
+
+## Cloudflare hosting
+
+The Cloudflare Worker `techpro-minds` serves the Vite site and `/api/demo`.
+Preview: https://techpro-minds.s-murugesh83.workers.dev
+
+- Run `npm ci`, `npx wrangler d1 migrations apply techpro-minds-inquiries --remote`,
+  then `npm run deploy:cloudflare` using the existing Cloudflare account.
+- Save `DEMO_SMTP_PASSWORD` as a Worker secret directly in Cloudflare. Never
+  commit credentials. SMTP host and mailbox login are configured in wrangler.jsonc.
+- The Cloudflare build sets `VITE_DEMO_ENDPOINT=/api/demo` and removes Netlify's
+  incompatible `_redirects` from build output. Standard builds retain Netlify
+  form handling for rollback.
+- D1 stores inquiries before attempting email. Support notifications and branded
+  customer confirmations are tracked separately. A scheduled job retries pending
+  deliveries every ten minutes, up to five attempts. Review incomplete records
+  in D1 and Worker logs; SMTP acceptance alone does not guarantee inbox placement.
+- Delivery uses hostname-based TLS sockets to Zoho; certificate validation stays
+  enabled. Request IDs, a honeypot, origin checks and IP/email limits reduce abuse.
+- Preserve Zoho MX, SPF, verification and DKIM records when changing DNS. Switch
+  custom domains only after preview tests pass. Keep Netlify available during
+  the migration; do not cancel domain renewal or email hosting.
+
+Migration status (2026-11-16): preview deployed; support and customer messages
+accepted by Zoho and customer confirmation verified in Gmail Inbox. Custom domain
+activation is still pending. Cloudflare assigned nameservers:
+`novalee.ns.cloudflare.com` and `yichun.ns.cloudflare.com`.

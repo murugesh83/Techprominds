@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function DemoRequest() {
+  const requestId = useRef(crypto.randomUUID());
   const [state, setState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (state === 'sending') return;
     const data = new FormData(event.currentTarget);
+    data.set('request-id', requestId.current);
     setState('sending');
     try {
       if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') throw new Error('Use the hosted form to submit.');
-      const response = await fetch('/', {
+      const response = await fetch(import.meta.env.VITE_DEMO_ENDPOINT || '/', {
         method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(Array.from(data.entries()).map(([key, value]) => [key, String(value)])).toString(),
       });
