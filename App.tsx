@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
+import DemoRequest from './components/DemoRequest';
 import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import HealthierPrivacyPolicy from './components/HealthierPrivacyPolicy';
@@ -25,6 +26,7 @@ const AppContent: React.FC = () => {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/demo" element={<DemoRequest />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/privacypolicy/healthier" element={<HealthierPrivacyPolicy />} />
           <Route path="/privacypolicy/kuralbox" element={<KuralBoxPrivacyPolicy />} />

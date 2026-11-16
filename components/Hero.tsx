@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const DEMO_EMAIL = 'mailto:support@techpromindus.com?subject=Restaurant%20website%20demo';
+export const DEMO_EMAIL = '/demo';
 
 const Hero: React.FC = () => (
   <section className="restaurant-hero">
@@ -18,7 +18,7 @@ const Hero: React.FC = () => (
         <div className="restaurant-browser">
           <div className="browser-top"><span>● ● ●</span><span>YOUR RESTAURANT, ONLINE</span><span>↗</span></div>
           <div className="sample-nav"><strong>THE LOCAL TABLE<span>FRESH FOOD. GOOD COMPANY.</span></strong><span>Menu &nbsp; Our story</span></div>
-          <div className="sample-cover"><span className="sample-label">MADE FRESH. MADE FOR YOU.</span><h2>Your next<br />favorite meal.</h2><span className="sample-order">Explore the menu ↗</span><div className="food-art" aria-hidden="true"><div className="plate"><i /><i /><i /><i /><i /><i /><b /></div></div></div>
+          <div className="sample-cover"><span className="sample-label">MADE FRESH. MADE FOR YOU.</span><h2>Your next<br />favorite meal.</h2><span className="sample-order">Explore the menu ↗</span><div className="food-photo"><img src="/images/restaurant-food-spread.jpg" alt="American burger and fries, Italian pizza and pasta, and Indian biryani, curry and naan" width="900" height="900" /></div></div>
           <div className="sample-menu"><span>Good food. Just a few taps away.</span><div><span>Browse the menu</span><span>Choose pickup</span><span>Enjoy your meal</span></div></div>
         </div>
         <div className="order-ticket"><span className="ticket-icon material-symbols-outlined" aria-hidden="true">check_circle</span><div><strong>A new order. Ready for your kitchen.</strong><p>Paid online · Pickup · Order tracking</p></div></div>

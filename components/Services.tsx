@@ -4,7 +4,7 @@ const services = [
   { icon: 'web', number: '01', title: 'A website that feels like your restaurant.', description: 'Mobile-friendly pages with your photos, hours, directions and contact details. Built around your food and your brand.', tag: 'RESTAURANT WEBSITE', className: 'website-card' },
   { icon: 'restaurant_menu', number: '02', title: 'A menu made for hungry customers.', description: 'Clear categories, prices and availability, with staff updates to keep your menu current.', tag: 'DIGITAL MENU', className: 'menu-card' },
   { icon: 'shopping_bag', number: '03', title: 'From your website to your kitchen.', description: 'Pickup checkout, online payments and order tracking. Supported Clover printing after we check your restaurant’s setup.', tag: 'DIRECT ONLINE ORDERING', className: 'ordering-card' },
-  { icon: 'dashboard', number: '04', title: 'The details, all in one place.', description: 'A management dashboard for orders, sales summaries and Excel downloads, so your team can stay on top of the day.', tag: 'MANAGEMENT DASHBOARD', className: 'dashboard-card' },
+  { icon: 'dashboard', number: '04', title: 'The details, all in one place.', description: 'A management dashboard to view and manage incoming orders, so your team can stay on top of the day.', tag: 'MANAGEMENT DASHBOARD', className: 'dashboard-card' },
 ];
 const Services: React.FC = () => (
   <section className="restaurant-section" id="services">

@@ -16,14 +16,14 @@
                 extend: {
                     colors: {
                         "primary": {
-                            DEFAULT: "#183d32",
-                            "light": "#52745b",
-                            "dark": "#102e25",
+                            DEFAULT: "#0b4819",
+                            "light": "#347244",
+                            "dark": "#083612",
                         },
                         "background-main": "#ffffff",
                         "background-offset": "#f8fafc",
-                        "text-main": "#183d32",
-                        "text-muted": "#53655c"
+                        "text-main": "#292929",
+                        "text-muted": "#606060"
                     },
                     fontFamily: {
                         "display": ["Manrope", "sans-serif"]
@@ -37,7 +37,7 @@
             font-family: 'Manrope', sans-serif;
             scroll-behavior: smooth;
             background-color: #ffffff;
-            color: #183d32;
+            color: #292929;
         }
         .hero-gradient {
             background: radial-gradient(circle at 100% 0%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
@@ -70,7 +70,10 @@
 
 </head>
 <body class="bg-background-main text-text-main font-display">
-    <div id="root"></div>
+    <form name="restaurant-demo" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+<input name="bot-field"><input name="name"><input name="restaurant"><input type="email" name="email"><input name="phone"><textarea name="needs"></textarea>
+</form>
+<div id="root"></div>
 <script type="module" src="/index.tsx"></script>
 </body>
 </html>
