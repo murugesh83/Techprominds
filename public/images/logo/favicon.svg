@@ -1,0 +1,9 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Techpro Minds">
+  <rect width="32" height="32" rx="7" fill="#0b4819"/>
+  <path d="M7 19 A9 9 0 0 1 25 19" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+  <line x1="12" y1="22" x2="16.5" y2="15.5" stroke="#9fd3ab" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="16.5" y1="15.5" x2="20.5" y2="18.5" stroke="#9fd3ab" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="12" cy="22" r="2.4" fill="#ffffff"/>
+  <circle cx="20.5" cy="18.5" r="2.4" fill="#ffffff"/>
+  <circle cx="16.5" cy="15.5" r="2.8" fill="#9fd3ab"/>
+</svg>
