@@ -32,7 +32,7 @@ const AIConsultant: React.FC = () => {
         model: 'gemini-3-flash-preview',
         contents: [...messages, userMessage].map(m => m.content).join('\n'),
         config: {
-          systemInstruction: 'You are a Principal Engineering Consultant at Techpro Mind LLC. Your tone is professional, technical, and precise. You specialize in software ROI, scalability, and modern tech stacks. Be helpful but efficient.',
+          systemInstruction: 'You are a Principal Engineering Consultant at Techpro Minds LLC. Your tone is professional, technical, and precise. You specialize in software ROI, scalability, and modern tech stacks. Be helpful but efficient.',
           temperature: 0.4,
         }
       });

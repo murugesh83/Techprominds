@@ -7,7 +7,7 @@ const sections = [
     id: 'introduction',
     title: 'Privacy Policy – Kural Box',
     lastUpdated: 'November 13, 2026',
-    content: 'Techpro Mind LLC built the Kural Box app as a free, offline Thirukkural reader that lets you read, search, and reflect on the 1,330 couplets of the Thirukkural. This policy explains how Kural Box handles your information. In short: Kural Box works entirely on your device and does not collect, store, or share any personal data.',
+    content: 'Techpro Minds LLC built the Kural Box app as a free, offline Thirukkural reader that lets you read, search, and reflect on the 1,330 couplets of the Thirukkural. This policy explains how Kural Box handles your information. In short: Kural Box works entirely on your device and does not collect, store, or share any personal data.',
   },
   {
     id: 'no-data-collection',
@@ -141,7 +141,7 @@ const KuralBoxPrivacyPolicy: React.FC = () => {
               </div>
               <div>
                 <p className="text-white font-extrabold text-lg">Kural Box</p>
-                <p className="text-slate-400 text-sm">by Techpro Mind LLC</p>
+                <p className="text-slate-400 text-sm">by Techpro Minds LLC</p>
               </div>
             </div>
 

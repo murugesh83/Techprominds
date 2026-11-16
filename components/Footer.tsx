@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <div className="md:col-span-1">
             <Link to="/" className="footer-brand"><img src="/images/logo/techprominds-logo.svg" alt="Techpro Minds" width="500" height="105" /></Link>
             <p className="text-sm font-bold text-text-muted leading-relaxed">
-              Restaurant websites, direct ordering and ongoing care. Built and managed by Techpro Mind LLC.
+              Restaurant websites, direct ordering and ongoing care. Built and managed by Techpro Minds LLC.
             </p>
           </div>
 
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
 
         <div className="mt-24 pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-300">
-            © 2026 Techpro Mind LLC. All rights reserved.
+            © 2026 Techpro Minds LLC. All rights reserved.
           </p>
           <div className="flex gap-8">
             <a href="#" className="text-slate-300 hover:text-text-main transition-colors">

@@ -7,7 +7,7 @@ const sections = [
     id: 'introduction',
     title: 'Privacy Policy – Healthier: Food Scanner',
     lastUpdated: 'March 18, 2026',
-    content: 'Techpro Mind LLC built the Healthier – Food Scanner app to help users track nutrition and make healthier food choices. This policy explains how we handle your data when you use the app.',
+    content: 'Techpro Minds LLC built the Healthier – Food Scanner app to help users track nutrition and make healthier food choices. This policy explains how we handle your data when you use the app.',
   },
   {
     id: 'health-data',
@@ -156,7 +156,7 @@ const HealthierPrivacyPolicy: React.FC = () => {
               </div>
               <div>
                 <p className="text-white font-extrabold text-lg">Healthier – Food Scanner</p>
-                <p className="text-slate-400 text-sm">by Techpro Mind LLC</p>
+                <p className="text-slate-400 text-sm">by Techpro Minds LLC</p>
               </div>
             </div>
 

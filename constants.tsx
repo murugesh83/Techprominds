@@ -115,7 +115,7 @@ export const POLICY_SECTIONS: PolicySection[] = [
     id: 'introduction',
     title: 'Privacy Policy',
     lastUpdated: 'March 18, 2026',
-    content: 'Techpro Mind LLC values your privacy. This policy explains how we handle your personal data across our applications and services, including:',
+    content: 'Techpro Minds LLC values your privacy. This policy explains how we handle your personal data across our applications and services, including:',
     listType: 'checkmark',
   },
   {
@@ -214,7 +214,7 @@ export const POLICY_SECTIONS: PolicySection[] = [
   {
     id: 'contact-info',
     title: 'Contact Information',
-    content: 'Techpro Mind LLC',
+    content: 'Techpro Minds LLC',
     subSections: [
       {
         title: 'Email',
