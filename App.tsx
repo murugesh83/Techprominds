@@ -20,7 +20,7 @@ const AppContent: React.FC = () => {
   }, [location]);
 
   return (
-    <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-white">
+    <div className="site-shell relative flex min-h-screen w-full flex-col bg-white">
       <Header />
 
       <main className="flex-1">
