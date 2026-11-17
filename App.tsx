@@ -50,6 +50,7 @@ const AppContent: React.FC = () => {
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/privacypolicy/healthier" element={<HealthierPrivacyPolicy />} />
           <Route path="/privacypolicy/kuralbox" element={<KuralBoxPrivacyPolicy />} />
+          <Route path="/privacypolicy/*" element={<PrivacyPolicy />} />
         </Routes>
       </main>
 

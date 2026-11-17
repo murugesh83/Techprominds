@@ -1,9 +1,14 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { POLICY_SECTIONS, APPS } from '../constants';
 
 const PrivacyPolicy: React.FC = () => {
+  const { pathname } = useLocation();
+  const slug = pathname.split('/')[2]?.toLowerCase() || '';
+  const aliases: Record<string, string> = { smartscanner: 'smartdocscanner', 'smart-scanner': 'smartdocscanner', 'gps-map-camera': 'gpscamera', girivalam: 'tiruvannamalai', 'girivalam-guide': 'tiruvannamalai', 'wifi-smart-chat': 'smartshare', app: 'smartshare', 'photo-id-editor': 'passporteditor', 'smart-weather': 'smartweather', 'smart-fluid-particle': 'smartfluid', screenshotvault: 'screenvault' };
+  const app = APPS.find(item => item.privacyPolicyPath === `/privacypolicy/${aliases[slug] || slug}`);
+
   return (
     <div className="min-h-screen bg-[#0f172a] text-slate-300 py-20 font-['Inter']">
       <style>{`
@@ -29,7 +34,7 @@ const PrivacyPolicy: React.FC = () => {
         <div className="lg:grid lg:grid-cols-12 lg:gap-12">
           {/* Sidebar Navigation - Hidden on mobile, sticky on desktop */}
           <aside className="hidden lg:block lg:col-span-3">
-            <nav className="sticky top-8 space-y-4">
+            <nav className="sticky top-28 space-y-4">
               <div>
                 <h3 className="text-white font-bold mb-3 uppercase tracking-wider text-sm">Contents</h3>
                 <div className="bg-slate-900/50 rounded-lg p-2 border border-slate-800 backdrop-blur-sm max-h-[40vh] overflow-y-auto custom-scrollbar">
@@ -77,10 +82,10 @@ const PrivacyPolicy: React.FC = () => {
           {/* Main Content */}
           <main className="lg:col-span-9 space-y-16">
             {POLICY_SECTIONS.map((section, index) => (
-              <section key={section.id} id={section.id} className="scroll-mt-8">
+              <section key={section.id} id={section.id} className="scroll-mt-28">
                 {index === 0 ? (
                   <div className="mb-12">
-                    <h1 className="text-3xl font-bold text-white mb-4 tracking-tight">{section.title}</h1>
+                    <h1 className="text-3xl font-bold text-white mb-4 tracking-tight">{app ? `${app.name} — Privacy Policy` : section.title}</h1>
                     {section.lastUpdated && (
                       <div className="text-slate-500 font-medium mb-8 text-sm">
                         Last updated: {section.lastUpdated}

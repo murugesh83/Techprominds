@@ -54,16 +54,19 @@ import { AppInfo, PolicySection } from './types';
 export const APPS: AppInfo[] = [
   {
     name: 'Smart Scanner',
+    privacyPolicyPath: '/privacypolicy/smartdocscanner',
     description: 'Camera document scanner and share',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.smartdocscanner',
   },
   {
     name: 'GPS Map Camera',
+    privacyPolicyPath: '/privacypolicy/gpscamera',
     description: 'Preserve and Relive Your Travel Adventures',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.gpscamera',
   },
   {
     name: 'Girivalam Guide',
+    privacyPolicyPath: '/privacypolicy/tiruvannamalai',
     description: 'Temple Pilgrimage Route Navigator',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.tiruvannamalai',
   },
@@ -74,6 +77,7 @@ export const APPS: AppInfo[] = [
   },
   {
     name: 'Wifi Smart Chat',
+    privacyPolicyPath: '/privacypolicy/smartshare',
     description: 'File Transfer application',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.app',
   },
@@ -85,26 +89,31 @@ export const APPS: AppInfo[] = [
   },
   {
     name: 'Photo ID Editor',
+    privacyPolicyPath: '/privacypolicy/passporteditor',
     description: 'Professional Photo ID Editing Tool',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.passporteditor',
   },
   {
     name: 'Smart Weather',
+    privacyPolicyPath: '/privacypolicy/smartweather',
     description: 'Weather forecasting application',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.smartweather',
   },
   {
     name: 'Smart Fluid Particle',
+    privacyPolicyPath: '/privacypolicy/smartfluid',
     description: 'Create Stunning Artworks with Flowing Particles',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.smartfluid',
   },
   {
     name: 'NotifyVault',
+    privacyPolicyPath: '/privacypolicy/notifyvault',
     description: 'Smart Notification Manager and Backup',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.notifyvault',
   },
   {
     name: 'ScreenShotVault',
+    privacyPolicyPath: '/privacypolicy/screenvault',
     description: 'Secure Screenshot Organizer and Storage',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.smartshare.transfer.screenvault',
   },
