@@ -9,7 +9,7 @@ import { PRODUCT_GROUPS } from './restaurantProducts';
 export function Page({ title, intro, children }: { title: string; intro: string; children: React.ReactNode }) {
   return <div className="restaurant-home dedicated-page"><section className="page-intro restaurant-wrap"><p className="eyebrow">TECHPRO MINDS / {title.toUpperCase()}</p><h1>{title}</h1><p>{intro}</p></section>{children}</div>;
 }
-export const PricingPage = () => <Page title="Pricing" intro="A website that works for your restaurant. A package that fits your plans."><Pricing /></Page>;
+export const PricingPage = () => <div className="restaurant-home pricing-page"><Pricing /></div>;
 export const ProcessPage = () => <Page title="How it works" intro="A personal setup, a thoughtful launch, and a team to help you keep things running."><HowItWorks /><Contact /></Page>;
 export const ProductsPage = () => <Page title="Tools for your restaurant" intro="Explore our services and see which options are available, planned or being explored."><ProductCatalog /></Page>;
 export const WorkPage = () => <Page title="Our restaurant work" intro="See a real website built by Techpro Minds, then imagine what we could create for your restaurant."><RestaurantWork /><Contact /></Page>;
