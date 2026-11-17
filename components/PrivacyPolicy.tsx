@@ -9,6 +9,8 @@ const PrivacyPolicy: React.FC = () => {
   const aliases: Record<string, string> = { smartscanner: 'smartdocscanner', 'smart-scanner': 'smartdocscanner', 'gps-map-camera': 'gpscamera', girivalam: 'tiruvannamalai', 'girivalam-guide': 'tiruvannamalai', 'wifi-smart-chat': 'smartshare', app: 'smartshare', 'photo-id-editor': 'passporteditor', 'smart-weather': 'smartweather', 'smart-fluid-particle': 'smartfluid', screenshotvault: 'screenvault' };
   const app = APPS.find(item => item.privacyPolicyPath === `/privacypolicy/${aliases[slug] || slug}`);
 
+  const icons: Record<string, string> = { smartdocscanner: 'document_scanner', gpscamera: 'photo_camera', tiruvannamalai: 'temple_hindu', smartshare: 'wifi', passporteditor: 'badge', smartweather: 'partly_cloudy_day', smartfluid: 'water', notifyvault: 'notifications', screenvault: 'screenshot' };
+
   return (
     <div className="min-h-screen bg-[#0f172a] text-slate-300 py-20 font-['Inter']">
       <style>{`
@@ -24,11 +26,11 @@ const PrivacyPolicy: React.FC = () => {
       `}</style>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <Link
-          to="/"
+          to={app ? "/privacypolicy" : "/"}
           className="mb-8 flex items-center gap-2 text-primary hover:text-white transition-colors font-bold uppercase tracking-widest text-sm"
         >
           <span className="material-symbols-outlined">arrow_back</span>
-          Back
+          {app ? "Back to Privacy Policy" : "Back"}
         </Link>
 
         <div className="lg:grid lg:grid-cols-12 lg:gap-12">
@@ -48,13 +50,13 @@ const PrivacyPolicy: React.FC = () => {
                       }}
                       className="block px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-md transition-colors truncate"
                     >
-                      {section.title}
+                      {app && section.id === 'introduction' ? `Privacy Policy – ${app.name}` : section.title}
                     </a>
                   ))}
                 </div>
               </div>
 
-              <div>
+              {!app && <div>
                 <h3 className="text-white font-bold mb-3 uppercase tracking-wider text-sm">Our Apps</h3>
                 <div className="bg-slate-900/50 rounded-lg p-2 border border-slate-800 backdrop-blur-sm max-h-[40vh] overflow-y-auto custom-scrollbar">
                   {APPS.map((app) => {
@@ -75,17 +77,21 @@ const PrivacyPolicy: React.FC = () => {
                     );
                   })}
                 </div>
-              </div>
+              </div>}
             </nav>
           </aside>
 
           {/* Main Content */}
           <main className="lg:col-span-9 space-y-16">
+            {app && <div className="flex items-center gap-4 p-4 bg-slate-900/50 border border-slate-800 rounded-2xl w-fit">
+              <div className="h-14 w-14 shrink-0 rounded-2xl bg-primary flex items-center justify-center shadow-lg shadow-primary/30"><span className="material-symbols-outlined text-white text-3xl" aria-hidden="true">{icons[aliases[slug] || slug] || 'apps'}</span></div>
+              <div><p className="text-white font-extrabold text-lg">{app.name}</p><p className="text-slate-400 text-sm">by Techpro Minds LLC</p></div>
+            </div>}
             {POLICY_SECTIONS.map((section, index) => (
               <section key={section.id} id={section.id} className="scroll-mt-28">
                 {index === 0 ? (
                   <div className="mb-12">
-                    <h1 className="text-3xl font-bold text-white mb-4 tracking-tight">{app ? `${app.name} — Privacy Policy` : section.title}</h1>
+                    <h1 className="text-3xl font-bold text-white mb-4 tracking-tight">{app ? `Privacy Policy – ${app.name}` : section.title}</h1>
                     {section.lastUpdated && (
                       <div className="text-slate-500 font-medium mb-8 text-sm">
                         Last updated: {section.lastUpdated}
@@ -93,11 +99,11 @@ const PrivacyPolicy: React.FC = () => {
                     )}
                     {section.content && (
                       <p className="text-base font-medium text-slate-300 mb-6">
-                        {section.content}
+                        {app ? section.content.replace('across our applications and services, including:', `for ${app.name}.`) : section.content}
                       </p>
                     )}
                     {/* Render apps list for introduction if needed */}
-                    {section.id === 'introduction' && APPS.length > 0 && (
+                    {!app && section.id === 'introduction' && APPS.length > 0 && (
                       <div className="grid gap-3 mt-6 sm:grid-cols-2">
                         {APPS.map((app) => {
                           const hasPolicy = Boolean(app.privacyPolicyPath);

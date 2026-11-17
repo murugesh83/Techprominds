@@ -127,7 +127,7 @@ const HealthierPrivacyPolicy: React.FC = () => {
         <div className="lg:grid lg:grid-cols-12 lg:gap-12">
           {/* Sidebar */}
           <aside className="hidden lg:block lg:col-span-3">
-            <nav className="sticky top-8 space-y-1">
+            <nav className="sticky top-28 space-y-1">
               <h3 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Contents</h3>
               <div className="bg-slate-900/50 rounded-lg p-2 border border-slate-800 backdrop-blur-sm max-h-[80vh] overflow-y-auto custom-scrollbar">
                 {sections.map((section) => (
@@ -161,7 +161,7 @@ const HealthierPrivacyPolicy: React.FC = () => {
             </div>
 
             {sections.map((section, index) => (
-              <section key={section.id} id={section.id} className="scroll-mt-8">
+              <section key={section.id} id={section.id} className="scroll-mt-28">
                 {index === 0 ? (
                   <div className="mb-4">
                     <h1 className="text-3xl font-bold text-white mb-4 tracking-tight">{section.title}</h1>
