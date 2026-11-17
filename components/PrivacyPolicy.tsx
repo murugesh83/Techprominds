@@ -83,10 +83,10 @@ const PrivacyPolicy: React.FC = () => {
 
           {/* Main Content */}
           <main className="lg:col-span-9 space-y-16">
-            {app && <div className="flex items-center gap-4 p-4 bg-slate-900/50 border border-slate-800 rounded-2xl w-fit">
-              <div className="h-14 w-14 shrink-0 rounded-2xl bg-primary flex items-center justify-center shadow-lg shadow-primary/30"><span className="material-symbols-outlined text-white text-3xl" aria-hidden="true">{icons[aliases[slug] || slug] || 'apps'}</span></div>
-              <div><p className="text-white font-extrabold text-lg">{app.name}</p><p className="text-slate-400 text-sm">by Techpro Minds LLC</p></div>
-            </div>}
+            <div className="flex items-center gap-4 p-4 bg-slate-900/50 border border-slate-800 rounded-2xl w-fit">
+              <div className="h-14 w-14 shrink-0 rounded-2xl bg-primary flex items-center justify-center shadow-lg shadow-primary/30"><span className="material-symbols-outlined text-white text-3xl" aria-hidden="true">{app ? icons[aliases[slug] || slug] || 'apps' : 'privacy_tip'}</span></div>
+              <div><p className="text-white font-extrabold text-lg">{app?.name || "Privacy Center"}</p><p className="text-slate-400 text-sm">by Techpro Minds LLC</p></div>
+            </div>
             {POLICY_SECTIONS.map((section, index) => (
               <section key={section.id} id={section.id} className="scroll-mt-28">
                 {index === 0 ? (
@@ -109,10 +109,10 @@ const PrivacyPolicy: React.FC = () => {
                           const hasPolicy = Boolean(app.privacyPolicyPath);
                           const card = (
                             <div key={app.name} className={`flex items-start gap-3 bg-slate-900/50 p-3 rounded-lg border transition-colors ${hasPolicy ? 'border-primary/50 hover:border-primary cursor-pointer hover:bg-slate-800/80' : 'border-slate-800'}`}>
-                              <span className="material-symbols-outlined text-primary mt-0.5 text-lg">check_circle</span>
+                              <span className="material-symbols-outlined text-white bg-primary rounded-xl p-3 text-2xl" aria-hidden="true">{icons[app.privacyPolicyPath?.split("/").pop() || ""] || (app.name === "Kural Box" ? "menu_book" : "nutrition")}</span>
                               <div className="flex-1">
                                 <h4 className="font-bold text-white text-sm">{app.name}</h4>
-                                <p className="text-xs text-slate-400">{app.description}</p>
+                                <p className="text-xs text-slate-400">{app.description}</p><span className="block mt-2 text-xs font-semibold text-slate-200">View privacy policy →</span>
                               </div>
                               {hasPolicy && (
                                 <span className="material-symbols-outlined text-primary text-sm mt-0.5">open_in_new</span>
