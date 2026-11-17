@@ -10,7 +10,7 @@ const Hero: React.FC = () => (
         <h1>Your food.<br />Your brand.<br /><em>Your online orders.</em></h1>
         <p className="hero-description">We build and manage your restaurant’s website and direct ordering.</p>
         <p className="hero-detail">A beautiful website, a menu that’s easy to browse, and a simpler path from hungry customer to kitchen. With a real team to keep it all running.</p>
-        <div className="restaurant-actions"><a className="restaurant-button" href={DEMO_EMAIL}>Let’s talk about your restaurant <span aria-hidden="true">↗</span></a><a className="text-link" href="#restaurant-work">See our work <span aria-hidden="true">↗</span></a></div>
+        <div className="restaurant-actions"><a className="restaurant-button" href={DEMO_EMAIL}>Let’s talk about your restaurant <span aria-hidden="true">↗</span></a><a className="text-link" href="/restaurant-work">See our work <span aria-hidden="true">↗</span></a></div>
         <p className="hero-note">Personal setup. Ongoing care. Your own brand.</p>
       </div>
       <div className="product-scene" aria-label="Illustrative restaurant website and order management preview">

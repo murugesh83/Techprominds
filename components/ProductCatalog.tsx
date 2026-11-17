@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { PRODUCT_GROUPS } from './restaurantProducts';
 
 export default function ProductCatalog() {
@@ -14,7 +15,7 @@ export default function ProductCatalog() {
     <div className="catalog-legend"><span><i /> Available today</span><span>Setup review: compatibility required</span><span>Planned / Exploring: future options, not yet available</span></div>
     <div className="catalog-groups">{PRODUCT_GROUPS.map(group => <div key={group.title}><h3>{group.title}</h3>{group.products.map(product => <details id={product.id} key={product.id} open={selected === product.id}>
       <summary onClick={event => { event.preventDefault(); setSelected(selected === product.id ? '' : product.id); }}><span className="material-symbols-outlined" aria-hidden="true">{product.icon}</span><span>{product.name}</span><small className={product.status === 'Available' ? 'status-available' : ''}>{product.status}</small><span aria-hidden="true" className="detail-plus">{selected === product.id ? '−' : '+'}</span></summary>
-      <div className="catalog-description"><p>{product.description}</p><a href={`mailto:support@techpromindus.com?subject=${encodeURIComponent('Restaurant inquiry: ' + product.name)}`}>Discuss {product.name.toLowerCase()} <span aria-hidden="true">↗</span></a></div>
+      <div className="catalog-description"><p>{product.description}</p><Link to={`/products/${product.id}`} className="product-learn">Explore {product.name.toLowerCase()} ↗</Link> <a href={`mailto:support@techpromindus.com?subject=${encodeURIComponent('Restaurant inquiry: ' + product.name)}`}>Discuss {product.name.toLowerCase()} <span aria-hidden="true">↗</span></a></div>
     </details>)}</div>)}</div>
   </div></section>;
 }
