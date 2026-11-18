@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <div className="md:col-span-1">
             <Link to="/" className="footer-brand"><img src="/images/logo/techprominds-logo.svg" alt="Techpro Minds" width="500" height="105" /></Link>
             <p className="text-sm font-bold text-text-muted leading-relaxed">
-              Restaurant websites, Clover POS setup and ongoing care. Built and managed by Techpro Minds LLC.
+              Websites, mobile apps, IT consulting and Clover POS services. Built and managed by Techpro Minds LLC.
             </p>
           </div>
 
@@ -21,6 +21,8 @@ const Footer: React.FC = () => {
               <li><a className="hover:text-primary transition-colors" href="/products/pos">Clover POS Installation</a></li>
               <li><a className="hover:text-primary transition-colors" href="/products/clover-printing">Clover Order Printing</a></li>
               <li><a className="hover:text-primary transition-colors" href="/products/pos-integrations">Website & POS Integration</a></li>
+              <li><Link to="/products/software-it-consulting">Software &amp; IT Consulting</Link></li>
+              <li><Link to="/products/mobile-app-development">Mobile App Development</Link></li>
             </ul>
           </div>
 

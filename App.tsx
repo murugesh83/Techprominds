@@ -26,9 +26,9 @@ const AppContent: React.FC = () => {
       navigate(legacy[fragment] || `/products/${product!.id}`, { replace: true });
       return;
     }
-    const titles: Record<string, string> = { '/pricing': 'Pricing', '/how-it-works': 'How it works', '/products': 'Restaurant services', '/restaurant-work': 'Restaurant work', '/apps': 'Our apps', '/contact': 'Contact', '/demo': 'Request a demo' };
+    const titles: Record<string, string> = { '/pricing': 'Pricing', '/how-it-works': 'How it works', '/products': 'Our services', '/restaurant-work': 'Restaurant work', '/apps': 'Our apps', '/contact': 'Contact', '/demo': 'Request a demo' };
     const currentProduct = PRODUCT_GROUPS.flatMap(group => group.products).find(item => location.pathname === `/products/${item.id}`);
-    document.title = `${currentProduct?.name || titles[location.pathname] || (location.pathname.startsWith('/privacypolicy') ? 'Privacy Policy' : 'Restaurant Websites & Clover POS')} | Techpro Minds LLC`;
+    document.title = `${currentProduct?.name || titles[location.pathname] || (location.pathname.startsWith('/privacypolicy') ? 'Privacy Policy' : 'Websites, Mobile Apps & IT Consulting')} | Techpro Minds LLC`;
   }, [location.pathname, location.hash, location.key, navigate]);
 
   return (
