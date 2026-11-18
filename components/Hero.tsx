@@ -7,11 +7,11 @@ const Hero: React.FC = () => (
     <div className="restaurant-wrap hero-layout">
       <div>
         <p className="eyebrow"><span /> BUILT FOR INDEPENDENT RESTAURANTS</p>
-        <h1>Your food.<br />Your brand.<br /><em>Your online orders.</em></h1>
-        <p className="hero-description">We build and manage your restaurant’s website and direct ordering.</p>
-        <p className="hero-detail">A beautiful website, a menu that’s easy to browse, and a simpler path from hungry customer to kitchen. With a real team to keep it all running.</p>
-        <div className="restaurant-actions"><a className="restaurant-button" href={DEMO_EMAIL}>Let’s talk about your restaurant <span aria-hidden="true">↗</span></a><a className="text-link" href="/restaurant-work">See our work <span aria-hidden="true">↗</span></a></div>
-        <p className="hero-note">Personal setup. Ongoing care. Your own brand.</p>
+        <h1>Your website.<br />Your Clover POS.<br /><em>Working together.</em></h1>
+        <p className="hero-description">Restaurant websites, Clover setup and ongoing support.</p>
+        <p className="hero-detail">We build your website, help install Clover, set up supported order printing and connect your online ordering workflow. One team to help with the details.</p>
+        <div className="restaurant-actions"><a className="restaurant-button" href={DEMO_EMAIL}>Discuss your setup <span aria-hidden="true">↗</span></a><a className="text-link" href="/restaurant-work">See our work <span aria-hidden="true">↗</span></a></div>
+        <p className="hero-note">Clear scope. Careful setup. Ongoing support.</p>
       </div>
       <div className="product-scene" aria-label="Illustrative restaurant website and order management preview">
         <div className="scene-orbit" />

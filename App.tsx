@@ -9,7 +9,6 @@ import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import HealthierPrivacyPolicy from './components/HealthierPrivacyPolicy';
 import KuralBoxPrivacyPolicy from './components/KuralBoxPrivacyPolicy';
-import AIConsultant from './components/AIConsultant';
 
 const AppContent: React.FC = () => {
   const location = useLocation();
@@ -27,9 +26,9 @@ const AppContent: React.FC = () => {
       navigate(legacy[fragment] || `/products/${product!.id}`, { replace: true });
       return;
     }
-    const titles: Record<string, string> = { '/pricing': 'Pricing', '/how-it-works': 'How it works', '/products': 'Restaurant products', '/restaurant-work': 'Restaurant work', '/apps': 'Our apps', '/contact': 'Contact', '/demo': 'Request a demo' };
+    const titles: Record<string, string> = { '/pricing': 'Pricing', '/how-it-works': 'How it works', '/products': 'Restaurant services', '/restaurant-work': 'Restaurant work', '/apps': 'Our apps', '/contact': 'Contact', '/demo': 'Request a demo' };
     const currentProduct = PRODUCT_GROUPS.flatMap(group => group.products).find(item => location.pathname === `/products/${item.id}`);
-    document.title = `${currentProduct?.name || titles[location.pathname] || (location.pathname.startsWith('/privacypolicy') ? 'Privacy Policy' : 'Restaurant Websites & Direct Ordering')} | Techpro Minds LLC`;
+    document.title = `${currentProduct?.name || titles[location.pathname] || (location.pathname.startsWith('/privacypolicy') ? 'Privacy Policy' : 'Restaurant Websites & Clover POS')} | Techpro Minds LLC`;
   }, [location.pathname, location.hash, location.key, navigate]);
 
   return (
@@ -55,7 +54,6 @@ const AppContent: React.FC = () => {
       </main>
 
       <Footer />
-      <AIConsultant />
     </div>
   );
 };

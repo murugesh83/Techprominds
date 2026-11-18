@@ -127,3 +127,21 @@ footer .text-primary{color:#444}footer .bg-text-main{background:#333}
   .restaurant-home .demo-section{padding:28px 0 36px}.demo-layout{gap:24px}.demo-form-card{padding:24px}
   .restaurant-home:not(.dedicated-page):not(.pricing-page)>.restaurant-section{padding-top:40px;padding-bottom:40px}
 }
+
+/* Focused service navigation and quieter restaurant pages. */
+.services-nav{position:relative}
+.services-dropdown{position:absolute;top:calc(100% + 12px);left:0;width:340px;padding:12px;background:#fff;border:1px solid #e4e4e4;border-radius:14px;box-shadow:0 16px 40px #00000012}
+.main-navigation .services-dropdown a{display:flex;align-items:center;gap:12px;padding:14px 12px;font-size:15px;white-space:normal;line-height:1.4}
+.services-dropdown .material-symbols-outlined{font-size:23px;color:#777}
+.restaurant-service{background:#fff!important;border:1px solid #e4e4e4;box-shadow:none}
+.restaurant-service h3{font-size:27px;line-height:1.2;margin:20px 0 16px}
+.service-link{display:inline-block;margin-top:24px;font-size:15px;font-weight:700;border-bottom:1px solid #aaa;padding-bottom:4px}
+.service-scope{font-size:14px;color:#666;margin-top:24px;max-width:850px;line-height:1.6}
+.restaurant-hero h1{font-size:clamp(38px,4.4vw,64px);line-height:1.07}
+.clover-quote{margin-top:28px;padding:26px;border:1px solid #ddd;border-radius:14px;background:#f7f7f7;display:flex;gap:28px;align-items:center;justify-content:space-between}
+.clover-quote h2{font-size:24px;margin-bottom:12px}.clover-quote p{max-width:660px;color:#606060;font-size:16px}.clover-quote a{flex-shrink:0}
+@media(max-width:900px){.services-nav{width:100%}.services-dropdown{position:static;width:100%;margin-top:8px;box-shadow:none}.main-navigation .services-dropdown a{font-size:15px}.clover-quote{flex-direction:column;align-items:flex-start}}
+@media(max-width:600px){.restaurant-service h3{font-size:24px}.clover-quote{padding:22px}}
+.services-nav>button{display:flex;align-items:center;gap:10px;padding:14px 16px;font-size:16px;font-weight:600;border-radius:8px}.services-nav>button:hover,.services-nav>button[aria-expanded=true]{background:#f3f3f3}.dedicated-page #services .section-heading{display:none}
+@media(max-width:1150px){.services-nav>button{font-size:14px;padding:12px 10px}}
+@media(max-width:900px){.services-nav>button{width:100%;font-size:17px;padding:13px;justify-content:space-between}}

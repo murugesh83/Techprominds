@@ -11,37 +11,33 @@ export function Page({ title, intro, children }: { title: string; intro: string;
 }
 export const PricingPage = () => <div className="restaurant-home pricing-page"><Pricing /></div>;
 export const ProcessPage = () => <Page title="How it works" intro="A personal setup, a thoughtful launch, and a team to help you keep things running."><HowItWorks /><Contact /></Page>;
-export const ProductsPage = () => <Page title="Tools for your restaurant" intro="Explore our services and see which options are available, planned or being explored."><ProductCatalog /></Page>;
+export const ProductsPage = () => <Page title="Restaurant services" intro="Website management, Clover installation, order printing and POS integration. A clear scope for every setup."><ProductCatalog /></Page>;
 export const WorkPage = () => <Page title="Our restaurant work" intro="See a real website built by Techpro Minds, then imagine what we could create for your restaurant."><RestaurantWork /><Contact /></Page>;
 export const AppsPage = () => <Page title="Our apps" intro="Explore the Techpro Minds app collection."><Apps /></Page>;
 export const ContactPage = () => <Page title="Let’s talk" intro="Tell us about your restaurant, your current setup and what you’d like to improve."><Contact /></Page>;
 
 const productDetails: Record<string, [string, string][]> = {
-  'restaurant-website': [['Made for mobile', 'Photos, hours, directions and contact details that are easy to find on a phone.'], ['Your restaurant, your identity', 'A website built around your menu, brand and the way you serve guests.'], ['A clear next step', 'Help visitors browse your menu, find your location or start an order.']],
-  'restaurant-seo': [['Search-friendly pages', 'Planned work on page titles, descriptions and useful restaurant information.'], ['Local relevance', 'Content focused on your location, cuisine and the questions customers ask.'], ['Realistic expectations', 'This service is planned. Search positions and traffic improvements cannot be guaranteed.']],
-  'reviews': [['Make feedback easy', 'Planned review links and QR codes for customers to share honest feedback.'], ['Stay in control', 'Owner-approved response drafts before anything is published.']],
-  'listings': [['Consistent details', 'Planned updates to hours, address and contact information across supported listings.'], ['Restaurant approval', 'Review the listing details and account access needed before changes are made.']],
-  'online-menu': [['Easy to browse', 'Organized categories, item names and prices for hungry customers.'], ['Keep it current', 'Update prices and availability as your menu changes.']],
-  'online-ordering': [['Direct pickup orders', 'Give customers a checkout experience connected to your restaurant website.'], ['Payments and tracking', 'Online payment and order status, configured and tested for your setup.'], ['Kitchen compatibility', 'Supported Clover printing requires a compatibility review before launch.']],
-  'pos-integrations': [['Check your setup first', 'We review your Clover hardware and account before confirming supported order printing.'], ['Test the workflow', 'Validate how orders reach the kitchen before going live. Other POS systems need a separate assessment.']],
-  'branded-app': [['Your brand on a phone', 'An app concept for customers to return to your restaurant and browse or order.'], ['Exploring the possibilities', 'This is a future option. Features, pricing and launch timing are not yet committed.']],
-  'dashboard': [['Orders in one place', 'A staff workspace for viewing and managing incoming orders.'], ['Built for daily use', 'Review daily activity and keep your team informed during service.']],
-  'maintenance': [['Keep your website fresh', 'Menu changes and promotions within your agreed monthly update allowance.'], ['Ongoing care', 'Backups and monitoring, with support hours and scope agreed before launch.']],
-  'pos': [['A future possibility', 'We are exploring a full point-of-sale offering for restaurant operations.'], ['Your current POS stays essential', 'Our current website and ordering services do not replace your existing point-of-sale system.']],
-  'ai-assistant': [['Helpful summaries', 'An assistant concept for restaurant summaries and suggested actions.'], ['You stay in charge', 'Restaurant approval would be required before operational changes. Availability is not yet committed.']],
+  'restaurant-website': [['Design & launch', 'Mobile-friendly pages, your food photos, hours, directions and a clear digital menu.'], ['Search essentials', 'Useful restaurant content, page titles and local information. Search rankings are not guaranteed.'], ['Monthly management', 'Menu and price updates, backups and monitoring within your agreed support plan.']],
+  'pos': [['Review your setup', 'Confirm Clover devices, account access, network requirements and the installation location.'], ['Configure & test', 'Set up the agreed menu and device workflow, then check the everyday tasks your staff will use.'], ['Staff handover', 'Walk your team through the setup and agree on support. Hardware purchases, merchant approval and Clover subscriptions are separate.']],
+  'clover-printing': [['Check compatibility', 'Review printer models, connectivity and the source of incoming orders.'], ['Set up order tickets', 'Configure the supported printing workflow for your restaurant and kitchen.'], ['Test before service', 'Check sample orders and ticket details, and explain what to do if printing is interrupted.']],
+  'pos-integrations': [['Agree on the connection', 'Review your POS and website requirements. Confirm supported features and any third-party costs before quoting.'], ['Build the ordering workflow', 'Set up the agreed checkout and order handoff. Menu sync, payment sync and printer routing are included only when explicitly supported and agreed.'], ['Launch with confidence', 'Test the order journey with your team before going live. Other POS brands require a separate assessment.']],
+};
+const legacyServices: Record<string, string> = {
+  'maintenance': 'restaurant-website', 'restaurant-seo': 'restaurant-website', 'online-menu': 'restaurant-website',
+  'online-ordering': 'pos-integrations', 'dashboard': 'pos-integrations',
 };
 
 export function ProductPage() {
   const { slug } = useParams();
+  if (slug && legacyServices[slug]) return <Navigate to={`/products/${legacyServices[slug]}`} replace />;
   const product = PRODUCT_GROUPS.flatMap(group => group.products).find(item => item.id === slug);
   if (!product) return <Navigate to="/products" replace />;
-  const future = ['Planned', 'Exploring'].includes(product.status);
   return <div className="restaurant-home dedicated-page">
     <section className="restaurant-wrap product-page-hero">
-      <div><h1>{product.name}</h1><p className="product-page-description">{product.description}</p><div className="restaurant-actions"><Link to="/demo" className="restaurant-button">{future ? 'Discuss your needs' : 'Get a demo'} ↗</Link><Link to="/pricing" className="text-link">View packages ↗</Link></div>{future && <p className="product-availability">This is a future option and is not currently available or included in our launch packages.</p>}</div>
-      <aside className="product-page-visual"><span className="material-symbols-outlined" aria-hidden="true">{product.icon}</span><p>BUILT AROUND YOUR RESTAURANT</p><strong>Your brand.<br />Your team.<br />Your next step.</strong><span className="product-visual-status">{product.status === 'Available' ? 'Personal setup. Ongoing care.' : `${product.status} · Let’s explore the right fit.`}</span></aside>
+      <div><h1>{product.name}</h1><p className="product-page-description">{product.description}</p><div className="restaurant-actions"><Link to="/demo" className="restaurant-button">Discuss your setup ↗</Link><Link to="/pricing" className="text-link">View packages ↗</Link></div></div>
+      <aside className="product-page-visual"><span className="material-symbols-outlined" aria-hidden="true">{product.icon}</span><p>BUILT AROUND YOUR RESTAURANT</p><strong>Your website.<br />Your counter.<br />Your kitchen.</strong><span className="product-visual-status">{product.status === 'Available' ? 'Personal setup. Ongoing care.' : 'Compatibility reviewed before setup.'}</span></aside>
     </section>
-    <section className="restaurant-section product-page-details"><div className="restaurant-wrap"><h2>{future ? 'What we’re exploring' : 'What to expect'}</h2><div className="process-grid">{productDetails[product.id].map(([title, description], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
+    <section className="restaurant-section product-page-details"><div className="restaurant-wrap"><h2>What to expect</h2><div className="process-grid">{productDetails[product.id].map(([title, description], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
     <Contact />
   </div>;
 }
