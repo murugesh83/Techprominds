@@ -25,6 +25,7 @@ export default function Header() {
       <Link to="/pricing" aria-current={location.pathname === '/pricing' ? 'page' : undefined} onClick={close}>Pricing</Link>
       <Link to="/how-it-works" aria-current={location.pathname === '/how-it-works' ? 'page' : undefined} onClick={close}>How it works</Link>
       <Link to="/restaurant-work" onClick={close}>Our work</Link>
+      <Link to="/apps" aria-current={location.pathname === "/apps" ? "page" : undefined} onClick={close}>Our apps</Link>
       <Link className="header-demo" to="/demo" onClick={close}>Let’s talk <span aria-hidden="true">↗</span></Link>
     </nav>
   </div></header>;
