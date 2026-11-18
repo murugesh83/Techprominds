@@ -23,6 +23,7 @@ const Footer: React.FC = () => {
               <li><a className="hover:text-primary transition-colors" href="/products/pos-integrations">Website & POS Integration</a></li>
               <li><Link to="/products/software-it-consulting">Software &amp; IT Consulting</Link></li>
               <li><Link to="/products/mobile-app-development">Mobile App Development</Link></li>
+              <li><Link to="/products/ai-agents-automation">AI Agents &amp; Business Automation</Link></li>
             </ul>
           </div>
 

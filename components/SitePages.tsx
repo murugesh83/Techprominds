@@ -11,12 +11,13 @@ export function Page({ title, intro, children }: { title: string; intro: string;
 }
 export const PricingPage = () => <div className="restaurant-home pricing-page"><Pricing /></div>;
 export const ProcessPage = () => <Page title="How it works" intro="A personal setup, a thoughtful launch, and a team to help you keep things running."><HowItWorks /><Contact /></Page>;
-export const ProductsPage = () => <Page title="Our services" intro="Websites, mobile apps, IT consulting and Clover POS services. Practical support built around your business."><ProductCatalog /></Page>;
+export const ProductsPage = () => <Page title="Our services" intro="Websites, mobile apps, IT consulting and Clover POS services. AI assistants and practical support built around your business."><ProductCatalog /></Page>;
 export const WorkPage = () => <Page title="Our restaurant work" intro="See a real website built by Techpro Minds, then imagine what we could create for your restaurant."><RestaurantWork /><Contact /></Page>;
 export const AppsPage = () => <Page title="Our apps" intro="Explore the Techpro Minds app collection."><Apps /></Page>;
 export const ContactPage = () => <Page title="Let’s talk" intro="Tell us about your business, your idea and what you’d like to improve."><Contact /></Page>;
 
 const productDetails: Record<string, [string, string][]> = {
+  'ai-agents-automation': [['Customer support assistants', 'Answer common questions using approved business information and hand off to your team when a question needs personal attention.'], ['Lead & inquiry capture', 'Collect customer requirements, summarize inquiries and prepare follow-up drafts for your team to review.'], ['Business workflow automation', 'Connect supported tools to organize submissions, update agreed records and notify the right people. We review access, costs and approval steps before implementation.']],
   'software-it-consulting': [['Understand your needs', 'Review your current software, workflows and goals to identify where technology can help.'], ['Plan the right solution', 'Get practical recommendations for software choices, integrations and implementation priorities, with scope and costs agreed upfront.'], ['Support implementation', 'Work with us on the agreed improvements, technical troubleshooting and handover to your team.']],
   'mobile-app-development': [['Shape your idea', 'Define the audience, core features and target platforms before development begins.'], ['Design & build', 'Create a clear user experience and develop the agreed features, with regular reviews along the way.'], ['Test & launch', 'Test on agreed devices and support store submission. Store approval, developer account fees and ongoing maintenance are scoped separately.']],
   'restaurant-website': [['Design & launch', 'Mobile-friendly pages, your food photos, hours, directions and a clear digital menu.'], ['Search essentials', 'Useful restaurant content, page titles and local information. Search rankings are not guaranteed.'], ['Monthly management', 'Menu and price updates, backups and monitoring within your agreed support plan.']],
@@ -34,7 +35,7 @@ export function ProductPage() {
   if (slug && legacyServices[slug]) return <Navigate to={`/products/${legacyServices[slug]}`} replace />;
   const product = PRODUCT_GROUPS.flatMap(group => group.products).find(item => item.id === slug);
   if (!product) return <Navigate to="/products" replace />;
-  const businessService = ['software-it-consulting', 'mobile-app-development'].includes(product.id);
+  const businessService = ['software-it-consulting', 'mobile-app-development', 'ai-agents-automation'].includes(product.id);
   return <div className="restaurant-home dedicated-page">
     <section className="restaurant-wrap product-page-hero">
       <div><h1>{product.name}</h1><p className="product-page-description">{product.description}</p><div className="restaurant-actions"><Link to="/demo" className="restaurant-button">Discuss your project ↗</Link>{!businessService && <Link to="/pricing" className="text-link">View packages ↗</Link>}</div></div>
