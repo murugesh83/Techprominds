@@ -3,23 +3,43 @@
   "main": "cloudflare/worker.mjs",
   "account_id": "04b8e4081bf2b5292c1069f26cef6800",
   "compatibility_date": "2026-11-16",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "workers_dev": true,
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/api/*"]
+    "run_worker_first": [
+      "/api/*"
+    ]
   },
   "vars": {
     "DEMO_SMTP_HOST": "smtp.zoho.com",
     "DEMO_SMTP_USER": "murugesan.sagadevan@techpromindus.com"
   },
-  "d1_databases": [{
-    "binding": "DB",
-    "database_name": "techpro-minds-inquiries",
-    "database_id": "7a190008-6bcc-4405-97b3-b87d33ab7e27",
-    "migrations_dir": "migrations"
-  }],
-  "triggers": {"crons": ["*/10 * * * *"]}
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "techpro-minds-inquiries",
+      "database_id": "7a190008-6bcc-4405-97b3-b87d33ab7e27",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "*/10 * * * *"
+    ]
+  },
+  "routes": [
+    {
+      "pattern": "techpromindus.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.techpromindus.com",
+      "custom_domain": true
+    }
+  ]
 }
